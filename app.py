@@ -71,6 +71,18 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html')
 
+@app.route('/aboutus')
+def aboutus():
+    return render_template('aboutus.html')
+
+@app.route('/feedback')
+def feedback():
+    return render_template('feedback.html')
+
+@app.route('/contactus')
+def contactus():
+    return render_template('contactus.html')
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True)
+
