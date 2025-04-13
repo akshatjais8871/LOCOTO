@@ -1,0 +1,776 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LOCOTO Feedback</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(145deg, #e3f2fd, #ffffff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .feedback-container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .feedback-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .feedback-container form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feedback-container label {
+      margin: 10px 0 5px;
+      font-weight: 500;
+    }
+
+    .feedback-container input,
+    .feedback-container textarea,
+    .feedback-container select {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      outline: none;
+      transition: border 0.3s ease;
+      font-size: 14px;
+    }
+
+    .feedback-container input:focus,
+    .feedback-container textarea:focus,
+    .feedback-container select:focus {
+      border-color: #2196f3;
+    }
+
+    .feedback-container textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .feedback-container button {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #2196f3;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .feedback-container button:hover {
+      background-color: #1976d2;
+    }
+
+    .rating {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    .rating input[type="radio"] {
+      display: none;
+    }
+
+    .rating label {
+      font-size: 22px;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .rating input:checked ~ label {
+      color: #ffca28;
+    }
+
+    .rating label:hover,
+    .rating label:hover ~ label {
+      color: #ffc107;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="feedback-container">
+    <h2>We Value Your Feedback</h2>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your Name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="you@example.com" required>
+
+      <label>Rate Your Experience</label>
+      <div class="rating">
+        <input type="radio" name="rating" id="star5"><label for="star5">★</label>
+        <input type="radio" name="rating" id="star4"><label for="star4">★</label>
+        <input type="radio" name="rating" id="star3"><label for="star3">★</label>
+        <input type="radio" name="rating" id="star2"><label for="star2">★</label>
+        <input type="radio" name="rating" id="star1"><label for="star1">★</label>
+      </div>
+
+      <label for="message">Your Feedback</label>
+      <textarea id="message" placeholder="Share your thoughts..." required></textarea>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+
+</body>
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.feedback-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.feedback-container.submitted h1,
+.feedback-container.submitted p,
+.feedback-container.submitted .rating,
+.feedback-container.submitted .comment-box,
+.feedback-container.submitted .submit-btn {
+    display: none;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.rating {
+    margin-bottom: 20px;
+}
+
+.rating label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: bold;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    font-size: 2.5em;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.star {
+    margin: 0 5px;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.star:hover,
+.star.active {
+    color: #ffc107;
+    transform: scale(1.1);
+}
+
+.rating-message {
+    margin-top: 10px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.comment-box label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: bold;
+}
+
+.comment-box textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size: 1em;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.thank-you {
+    text-align: center;
+}
+
+.thank-you h2 {
+    color: #28a745;
+    margin-bottom: 10px;
+    font-size: 2.2em;
+}
+
+.thank-you p {
+    color: #777;
+}
+
+/* Emojis with subtle animation */
+.wave {
+    display: inline-block;
+    animation: wave-animation 0.8s infinite alternate;
+    transform-origin: 70% 70%;
+}
+
+.thinking {
+    display: inline-block;
+    animation: rotate-animation 1.2s infinite linear;
+}
+
+.rocket {
+    display: inline-block;
+    animation: fly-animation 1.5s infinite alternate;
+}
+
+.heart {
+    display: inline-block;
+    animation: pulse-animation 1s infinite alternate;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate(0.0deg) }
+    10% { transform: rotate(14.0deg) }
+    20% { transform: rotate(-8.0deg) }
+    30% { transform: rotate(14.0deg) }
+    40% { transform: rotate(-4.0deg) }
+    50% { transform: rotate(10.0deg) }
+    60% { transform: rotate(0.0deg) }
+    100% { transform: rotate(0.0deg) }
+}
+
+@keyframes rotate-animation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fly-animation {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+@keyframes pulse-animation {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+.hidden {
+    display: none;
+}</style>
+<body>
+    <div class="feedback-container">
+        <h1>We'd Love to Hear Your Thoughts! <span class="wave">👋</span></h1>
+        <p>Your feedback helps us improve. Please take a moment to share your experience.</p>
+
+        <div class="rating">
+            <label for="rating">Overall Experience:</label>
+            <div class="stars">
+                <span class="star" data-value="1">⭐</span>
+                <span class="star" data-value="2">⭐</span>
+                <span class="star" data-value="3">⭐</span>
+                <span class="star" data-value="4">⭐</span>
+                <span class="star" data-value="5">⭐</span>
+            </div>
+            <input type="hidden" id="rating" name="rating" value="0">
+            <div class="rating-message"></div>
+        </div>
+
+        <div class="comment-box">
+            <label for="comment">Any specific comments or suggestions? <span class="thinking">🤔</span></label>
+            <textarea id="comment" name="comment" rows="5" placeholder="Your valuable feedback..."></textarea>
+        </div>
+
+        <button class="submit-btn">Submit Feedback <span class="rocket">🚀</span></button>
+
+        <div class="thank-you hidden">
+            <h2>Thank You! <span class="heart">❤️</span></h2>
+            <p>Your feedback has been received and is greatly appreciated.</p>
+        </div>
+    </div>
+
+    <script>
+        const stars = document.querySelectorAll('.star');
+        const ratingInput = document.getElementById('rating');
+        const ratingMessage = document.querySelector('.rating-message');
+        const submitBtn = document.querySelector('.submit-btn');
+        const thankYou = document.querySelector('.thank-you');
+        const feedbackContainer = document.querySelector('.feedback-container');
+
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const value = parseInt(this.dataset.value);
+                ratingInput.value = value;
+                highlightStars(value);
+                displayRatingMessage(value);
+            });
+
+            star.addEventListener('mouseover', function() {
+                highlightStars(parseInt(this.dataset.value));
+            });
+
+            star.addEventListener('mouseout', function() {
+                highlightStars(parseInt(ratingInput.value));
+            });
+        });
+
+        function highlightStars(score) {
+            stars.forEach(star => {
+                star.classList.remove('active');
+            });
+            for (let i = 0; i < score; i++) {
+                stars[i].classList.add('active');
+            }
+        }
+
+        function displayRatingMessage(score) {
+            switch (score) {
+                case 1:
+                    ratingMessage.textContent = "Very Poor 😞";
+                    break;
+                case 2:
+                    ratingMessage.textContent = "Poor 🙁";
+                    break;
+                case 3:
+                    ratingMessage.textContent = "Okay Neutral 🙂";
+                    break;
+                case 4:
+                    ratingMessage.textContent = "Good 😊";
+                    break;
+                case 5:
+                    ratingMessage.textContent = "Excellent 😍";
+                    break;
+                default:
+                    ratingMessage.textContent = "";
+            }
+        }
+
+        submitBtn.addEventListener('click', function() {
+            // In a real application, you would send this data to a server
+            const ratingValue = ratingInput.value;
+            const commentText = document.getElementById('comment').value;
+
+            console.log("Rating:", ratingValue);
+            console.log("Comment:", commentText);
+
+            // Simulate submission and show thank you message
+            feedbackContainer.classList.add('submitted');
+            setTimeout(() => {
+                thankYou.classList.remove('hidden');
+                feedbackContainer.style.opacity = 0.7;
+            }, 500);
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Feedback</title>
+    <link rel="stylesheet" href="animated-style.css">
+</head>
+<style>/* animated-style.css */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #0f1010; /* Light blueish background */
+        display: flex;
+        gradient: linear-gradient(135deg, #e3f2fd, #ffffff);
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+    
+    .feedback-container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        width: 90%;
+        max-width: 550px;
+        transform: translateY(-20px);
+        opacity: 0;
+        animation: slideIn 0.6s ease-out 0.2s forwards, fadeIn 0.6s ease-out 0.2s forwards;
+    }
+    
+    @keyframes slideIn {
+        from { transform: translateY(-20px); }
+        to { transform: translateY(0); }
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    h1 {
+        color: #37474f; /* Dark grayish blue */
+        margin-bottom: 10px;
+        font-size: 2.5em;
+        animation: pulse 1.5s infinite alternate;
+    }
+    
+    @keyframes pulse {
+        from { transform: scale(1); }
+        to { transform: scale(1.05); }
+    }
+    
+    .sub-heading {
+        color: #78909c; /* Light grayish blue */
+        margin-bottom: 30px;
+        font-size: 1.1em;
+    }
+    
+    .rating-section {
+        margin-bottom: 30px;
+    }
+    
+    .rating-section label {
+        display: block;
+        margin-bottom: 15px;
+        color: #546e7a; /* Medium grayish blue */
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    
+    .star-rating {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5em;
+        color: #fdd835; /* Yellow for stars */
+        cursor: pointer;
+    }
+    
+    .star-rating input {
+        display: none; /* Hide the radio buttons */
+    }
+    
+    .star-rating label {
+        margin: 0 5px;
+        transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+        opacity: 0.7;
+    }
+    
+    .star-rating input:checked + label,
+    .star-rating label:hover {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    
+    .rating-message {
+        margin-top: 15px;
+        color: #2e7d32; /* Green for positive feedback */
+        font-weight: bold;
+        font-size: 1.1em;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+    
+    .rating-message.fade-in-out {
+        animation: fadeInOut 1s ease-in-out;
+    }
+    
+    @keyframes fadeInOut {
+        0% { opacity: 0; }
+        50% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    
+    .comment-section {
+        margin-bottom: 35px;
+    }
+    
+    .comment-section label {
+        display: block;
+        margin-bottom: 15px;
+        color: #546e7a;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    
+    .comment-section textarea {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #b0bec5; /* Light grayish blue */
+        border-radius: 8px;
+        box-sizing: border-box;
+        font-size: 1em;
+        resize: vertical;
+        transition: border-color 0.3s ease-in-out;
+    }
+    
+    .comment-section textarea:focus {
+        border-color: #1e88e5; /* Blue on focus */
+        outline: none;
+        box-shadow: 0 2px 5px rgba(30, 136, 229, 0.2);
+    }
+    
+    .submit-button {
+        background-color: #1e88e5; /* Blue submit button */
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1.1em;
+        transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        box-shadow: 0 4px 8px rgba(30, 136, 229, 0.2);
+    }
+    
+    .submit-button:hover {
+        background-color: #1565c0;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 10px rgba(30, 136, 229, 0.3);
+    }
+    
+    .thank-you-message {
+        text-align: center;
+        opacity: 0;
+        transform: scale(0.8);
+        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    }
+    
+    .feedback-container.submitted .rating-section,
+    .feedback-container.submitted .comment-section,
+    .feedback-container.submitted .submit-button {
+        display: none;
+    }
+    
+    .feedback-container.submitted .thank-you-message {
+        display: block;
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+    .thank-you-message h2 {
+        color: #4caf50; /* Green thank you */
+        margin-bottom: 10px;
+        font-size: 2.2em;
+        animation: heartBeat 1s infinite alternate;
+    }
+    
+    @keyframes heartBeat {
+        from { transform: scale(1); }
+        to { transform: scale(1.1); }
+    }
+    
+    .thank-you-message p {
+        color: #78909c;
+        font-size: 1.1em;
+    }
+    
+    /* Animated Emojis */
+    .sparkle {
+        display: inline-block;
+        animation: spin 2s infinite linear;
+    }
+    
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    
+    .pencil {
+        display: inline-block;
+        animation: write 1.8s infinite alternate;
+        transform-origin: bottom left;
+    }
+    
+    @keyframes write {
+        0% { transform: rotate(-10deg); }
+        50% { transform: rotate(10deg); }
+        100% { transform: rotate(-10deg); }
+    }
+    
+    .send-icon {
+        display: inline-block;
+        animation: slideRight 1s infinite alternate;
+    }
+    
+    @keyframes slideRight {
+        from { transform: translateX(0); }
+        to { transform: translateX(5px); }
+    }
+    
+    .heart-burst {
+        display: inline-block;
+        animation: burst 0.8s ease-out;
+    }
+    
+    @keyframes burst {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+        100% { transform: scale(1); }
+    }
+    
+    .hidden {
+        display: none;
+    }</style>
+<body>
+    <div class="feedback-container">
+        <h1>Share Your Experience <span class="sparkle">✨</span></h1>
+        <p class="sub-heading">Your feedback is valuable to us!</p>
+
+        <div class="rating-section">
+            <label for="rating">Rate your overall experience:</label>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5" title="Excellent">⭐</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4" title="Good">⭐</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3" title="Neutral">⭐</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2" title="Poor">⭐</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1" title="Very Poor">⭐</label>
+            </div>
+            <div class="rating-message"></div>
+        </div>
+
+        <div class="comment-section">
+            <label for="comment">Tell us more <span class="pencil">✏️</span></label>
+            <textarea id="comment" name="comment" rows="4" placeholder="Your detailed feedback..."></textarea>
+        </div>
+
+        <button class="submit-button">
+            Submit <span class="send-icon">➡️</span>
+        </button>
+
+        <div class="thank-you-message hidden">
+            <h2>Thank You! <span class="heart-burst">💖</span></h2>
+            <p>Your feedback has been received.</p>
+        </div>
+    </div>
+
+    <script>
+        const stars = document.querySelectorAll('.star-rating input');
+        const ratingMessage = document.querySelector('.rating-message');
+        const submitButton = document.querySelector('.submit-button');
+        const thankYouMessage = document.querySelector('.thank-you-message');
+        const feedbackContainer = document.querySelector('.feedback-container');
+
+        stars.forEach(star => {
+            star.addEventListener('change', function() {
+                const ratingValue = parseInt(this.value);
+                updateRatingMessage(ratingValue);
+            });
+        });
+
+        function updateRatingMessage(rating) {
+            switch (rating) {
+                case 1:
+                    ratingMessage.textContent = "Hmm, we'll try harder! 🙁";
+                    break;
+                case 2:
+                    ratingMessage.textContent = "Thanks for the feedback. We're improving. 😐";
+                    break;
+                case 3:
+                    ratingMessage.textContent = "Appreciate your neutral feedback! 🙂";
+                    break;
+                case 4:
+                    ratingMessage.textContent = "Glad you liked it! 😊";
+                    break;
+                case 5:
+                    ratingMessage.textContent = "Awesome! We're thrilled! 😄";
+                    break;
+                default:
+                    ratingMessage.textContent = "";
+            }
+            ratingMessage.classList.add('fade-in-out');
+            setTimeout(() => {
+                ratingMessage.classList.remove('fade-in-out');
+            }, 1000);
+        }
+
+        submitButton.addEventListener('click', function() {
+            // In a real application, you would send the data here
+            const selectedRating = document.querySelector('input[name="rating"]:checked');
+            const commentText = document.getElementById('comment').value;
+
+            console.log("Rating:", selectedRating ? selectedRating.value : "Not rated");
+            console.log("Comment:", commentText);
+
+            feedbackContainer.classList.add('submitted');
+            setTimeout(() => {
+                thankYouMessage.classList.remove('hidden');
+            }, 500);
+        });
+    </script>
+</body>
+</html>
+

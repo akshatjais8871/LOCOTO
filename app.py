@@ -79,9 +79,9 @@ def aboutus():
 def feedback():
     return render_template('feedback.html')
 
-@app.route('/contactus')
-def contactus():
-    return render_template('contactus.html')
+# @app.route('/contactus')
+# def contactus():
+#     return render_template('contactus.html')
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True)
