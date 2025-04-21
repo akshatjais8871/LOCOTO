@@ -1,52 +1,786 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>LOCOTO | Upload Image</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Upload images for translation with LOCOTO">
+  <meta name="author" content="LOCOTO">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <title>LOCOTO - Upload Image</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="static/css/fontawesome.css">
+  <link rel="stylesheet" href="static/css/templatemo-onix-digital.css">
+  <link rel="stylesheet" href="static/css/animated.css">
+  <link rel="stylesheet" href="static/css/owl.css">
+
+  <style>
+    .upload-container {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .upload-area {
+      border: 2px dashed #726ae3;
+      border-radius: 10px;
+      padding: 60px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .upload-area:hover {
+      background-color: #f5f5ff;
+    }
+
+    .upload-icon {
+      font-size: 48px;
+      color: #726ae3;
+      margin-bottom: 15px;
+    }
+
+    .language-select {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .upload-btn {
+      background-color: #726ae3;
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .upload-btn:hover {
+      background-color: #5d56d1;
+      transform: translateY(-2px);
+    }
+
+    .preview-area {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .preview-image {
+      max-width: 100%;
+      max-height: 300px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #file-name {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 em {
+      color: #726ae3;
+      font-style: normal;
+    }
+
+    .section-heading h2 span {
+      color: #ff565b;
+      font-style: normal;
+    }
+
+    /* Camera styles */
+    .option-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .option-btn {
+      background-color: #f8f9fa;
+      border: 2px solid #726ae3;
+      color: #726ae3;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .option-btn:hover,
+    .option-btn.active {
+      background-color: #726ae3;
+      color: #fff;
+    }
+
+    .option-btn i {
+      margin-right: 8px;
+    }
+
+    #camera-container {
+      display: none;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    #camera-feed {
+      width: 100%;
+      max-width: 640px;
+      max-height: 480px;
+      border-radius: 10px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .camera-controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .camera-btn {
+      background-color: #726ae3;
+      color: #fff;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .camera-btn:hover {
+      background-color: #5d56d1;
+      transform: translateY(-2px);
+    }
+
+    .camera-btn.reset {
+      background-color: #ff565b;
+    }
+
+    .camera-btn.reset:hover {
+      background-color: #e64a4f;
+    }
+
+    #upload-option,
+    #camera-option {
+      display: none;
+    }
+
+    .upload-option-container,
+    .camera-option-container {
+      display: none;
+    }
+
+    .upload-option-container.active,
+    .camera-option-container.active {
+      display: block;
+    }
+  </style>
 </head>
-<body class="bg-gray-100">
-  <div class="flex items-center justify-center min-h-screen">
-    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
-      <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Upload Image to Translate</h2>
-      
-      {% with messages = get_flashed_messages() %}
-        {% if messages %}
-          <ul class="mb-4 text-sm text-red-600">
-            {% for message in messages %}
-              <li>{{ message }}</li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      {% endwith %}
-      
-      <form action="/upload" method="POST" enctype="multipart/form-data" class="space-y-4">
-        <div>
-          <label class="block text-sm font-medium text-gray-700">Select Image</label>
-          <input type="file" name="image" accept="image/*" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-        </div>
 
-        <div>
-          <label class="block text-sm font-medium text-gray-700">Target Language</label>
-          <select name="language" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-            <option value="">Select Language</option>
-            <option value="hi">Hindi</option>
-            <option value="mr">Marathi</option>
-            <option value="ta">Tamil</option>
-            <option value="bn">Bengali</option>
-            <option value="te">Telugu</option>
-            <option value="kn">Kannada</option>
-            <option value="gu">Gujarati</option>
-            <option value="ml">Malayalam</option>
-            <!-- Add more as needed -->
-          </select>
-        </div>
+<body>
 
-        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Upload & Translate
-        </button>
-      </form>
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <div class="logo">
+              <img src="static/images/ChatGPT Image Apr 13, 2025, 03_27_10 PM.png" alt="LOCOTO" width="150"
+                height="150">
+            </div>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="/">Home</a></li>
+              <li class="scroll-to-section"><a href="register">Sign-Up</a></li>
+              <li class="scroll-to-section"><a href="login">Sign-In</a></li>
+              <li class="scroll-to-section"><a href="upload" class="active">Upload</a></li>
+              <li class="scroll-to-section"><a href="feedback">Feedback</a></li>
+              <li class="scroll-to-section"><a href="aboutus">About Us</a></li>
+              <li class="scroll-to-section">
+                <div class="main-red-button-hover"><a href="#contact">Contact Us Now</a></div>
+              </li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner" id="top" style="padding-bottom: 60px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h2>Upload <em>Image</em> for <span>Translation</span></h2>
+            <span>🔍 Scan • 🌍 Translate • 🔊 Listen</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="upload-section" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="upload-container">
+            <form id="upload-form" action="/process-image" method="post" enctype="multipart/form-data">
+              <!-- Input method selection -->
+              <div class="option-buttons">
+                <label class="option-btn active" for="upload-option">
+                  <i class="fa fa-upload"></i> Upload Image
+                </label>
+                <label class="option-btn" for="camera-option">
+                  <i class="fa fa-camera"></i> Use Camera
+                </label>
+                <input type="radio" id="upload-option" name="input-method" value="upload" checked>
+                <input type="radio" id="camera-option" name="input-method" value="camera">
+              </div>
+
+              <!-- Upload option -->
+              <div class="upload-option-container active">
+                <div class="upload-area" id="drop-area" onclick="document.getElementById('file-input').click()">
+                  <div class="upload-icon">
+                    <i class="fa fa-cloud-upload"></i>
+                  </div>
+                  <h4>Drag & Drop or Click to Upload</h4>
+                  <p>Support for JPG, PNG, PDF files</p>
+                  <input type="file" id="file-input" name="image" accept="image/*,.pdf" style="display:none;"
+                    onchange="previewFile()">
+                  <div id="file-name"></div>
+                </div>
+              </div>
+
+              <!-- Camera option -->
+              <div class="camera-option-container">
+                <div id="camera-container">
+                  <video id="camera-feed" autoplay playsinline></video>
+                  <canvas id="canvas" style="display:none;"></canvas>
+                  <div class="camera-controls">
+                    <button type="button" id="capture-btn" class="camera-btn">
+                      <i class="fa fa-camera"></i> Capture
+                    </button>
+                    <button type="button" id="reset-btn" class="camera-btn reset" style="display:none;">
+                      <i class="fa fa-refresh"></i> Reset
+                    </button>
+                  </div>
+                </div>
+                <div class="text-center" id="camera-instructions">
+                  <p>Click "Allow" when prompted to access your camera</p>
+                  <button type="button" id="start-camera" class="upload-btn">
+                    <i class="fa fa-video-camera"></i> Start Camera
+                  </button>
+                </div>
+              </div>
+
+              <div class="row language-select">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="source-language"><strong>Source Language (Detected)</strong></label>
+                    <select class="form-control" id="source-language" name="source-language" disabled>
+                      <option value="auto">Auto Detect</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="target-language"><strong>Target Language</strong></label>
+                    <select class="form-control" id="target-language" name="target-language">
+                      <option value="">Select Language</option>
+                      <option value="en">English</option>
+                      <option value="hi">Hindi</option>
+                      <option value="ta">Tamil</option>
+                      <option value="te">Telugu</option>
+                      <option value="ml">Malayalam</option>
+                      <option value="bn">Bengali</option>
+                      <option value="gu">Gujarati</option>
+                      <option value="kn">Kannada</option>
+                      <option value="mr">Marathi</option>
+                      <option value="pa">Punjabi</option>
+                      <option value="ur">Urdu</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="preview-area" id="preview-area" style="display:none;">
+                <h5>Preview</h5>
+                <img id="preview-image" class="preview-image" src="" alt="Preview">
+              </div>
+
+              <input type="hidden" id="capture-data" name="capture-data">
+
+              <div class="text-center mt-4">
+                <button type="submit" id="submit-btn" class="upload-btn">
+                  <i class="fa fa-magic"></i> Translate Now
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact" class="contact-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="section-heading">
+            <h2>Feel free to <em>Contact</em> us via the <span>form</span></h2>
+            <div id="map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1779.8398194660651!2d80.94023014633468!3d26.85013998728267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd1ca1b7057f%3A0x8932f633116edfbc!2sHazratganj%20Metro%20Station!5e0!3m2!1sen!2sin!4v1744560566391!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="info">
+              <span><i class="fa fa-envelope"></i> <a href="#">info@Locoto.com<br>mail@Locoto.com</a></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 align-self-center">
+          <form id="contact" action="" method="get">
+            <div class="row">
+              <div class="col-lg-12">
+                <fieldset>
+                  <input type="name" name="name" id="name" placeholder="Name" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <input type="surname" name="surname" id="surname" placeholder="Surname" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email"
+                    required="">
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <input type="text" name="website" id="website" placeholder="Leave Comments" required="">
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="main-button">Submit Request</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="contact-dec">
+      <img src="static/images/contact-dec.png" alt="">
+    </div>
+    <div class="contact-left-dec">
+      <img src="static/images/contact-left-dec.png" alt="">
+    </div>
+  </div>
+
+  <div class="footer-dec">
+    <img src="static/images/footer-dec.png" alt="">
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="about footer-item">
+            <div class="logo">
+              <img src="static/images/ChatGPT Image Apr 13, 2025, 03_27_10 PM.png" alt="LOCOTO">
+            </div>
+            <h4>info@Locoto.com</h4>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="services footer-item">
+            <h4>👥 Meet the Team</h4>
+            <ul>
+              <li>Virat Jaiswal<br>
+                🔹 Backend Developer – OCR, TTS, Translation, Authentication Modules.</a></li>
+              <li>Akshat Jaiswal<br>
+                🔹 Frontend & AI Developer – UI, Real-Time Processing, Regional Language AI, API Integration.</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="services footer-item">
+            <h4>💡 Key Features </h4>
+            <ul>
+              <li>📷 OCR-based text detection from images</li>
+              <li>🌍 Translation across multiple regional languages</li>
+              <li>🔊 Real-time Text-to-Speech output</li>
+              <li>🧑‍💻 User-friendly web interface</li>
+              <li>⚡ Fast, accurate, and context-aware translation</li>
+              <li>🔐 Secure authentication for personalized use</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="services footer-item">
+            <h4>🌐 Why LOCOTO?</h4>
+            <ul>
+              <li>🧩 Bridges Language Gaps – Communicate effortlessly in multiple regional dialects.</li>
+              <li>🎙️ Supports Auditory Learning – Text-to-speech helps users who prefer listening.</li>
+              <li>🛠️ Built with Python & AI – Fast, accurate, and constantly evolving.</li>
+              <li>🌱 Preserves Cultural Diversity – Promotes the use and survival of regional languages.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-12">
+          <div class="copyright">
+            <p>Copyright © 2025 LOCOTO | All Rights Reserved.
+              <br>
+              Designed by <a rel="nofollow" href="https://templatemo.com" title="free CSS templates">Two Brothers</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/js/owl-carousel.js"></script>
+  <script src="static/js/animation.js"></script>
+  <script src="static/js/imagesloaded.js"></script>
+  <script src="static/js/custom.js"></script>
+
+  <script>
+    // For drag and drop functionality
+    const dropArea = document.getElementById('drop-area');
+    const fileInput = document.getElementById('file-input');
+    const previewArea = document.getElementById('preview-area');
+    const previewImage = document.getElementById('preview-image');
+    const fileName = document.getElementById('file-name');
+    const uploadOption = document.getElementById('upload-option');
+    const cameraOption = document.getElementById('camera-option');
+    const uploadContainer = document.querySelector('.upload-option-container');
+    const cameraContainer = document.querySelector('.camera-option-container');
+    const optionButtons = document.querySelectorAll('.option-btn');
+    const startCameraBtn = document.getElementById('start-camera');
+    const cameraContainer2 = document.getElementById('camera-container');
+    const cameraInstructions = document.getElementById('camera-instructions');
+    const captureBtn = document.getElementById('capture-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const videoElement = document.getElementById('camera-feed');
+    const canvas = document.getElementById('canvas');
+    const captureData = document.getElementById('capture-data');
+    let stream = null;
+
+    // Prevent default behavior for drag events
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+      dropArea.addEventListener(eventName, preventDefaults, false);
+    });
+
+    function preventDefaults(e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    // Highlight drop area when dragging over it
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropArea.addEventListener(eventName, highlight, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropArea.addEventListener(eventName, unhighlight, false);
+    });
+
+    function highlight() {
+      dropArea.classList.add('highlight');
+    }
+
+    function unhighlight() {
+      dropArea.classList.remove('highlight');
+    }
+
+    // Handle dropped files
+    dropArea.addEventListener('drop', handleDrop, false);
+
+    function handleDrop(e) {
+      const dt = e.dataTransfer;
+      const files = dt.files;
+      fileInput.files = files;
+      previewFile();
+    }
+
+    // Preview uploaded file
+    function previewFile() {
+      const file = fileInput.files[0];
+      if (file) {
+        fileName.textContent = file.name;
+
+        // Only preview if it's an image
+        if (file.type.startsWith('image/')) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            previewImage.src = e.target.result;
+            previewArea.style.display = 'block';
+          }
+          reader.readAsDataURL(file);
+        } else if (file.type === 'application/pdf') {
+          // Show a generic PDF icon for PDF files
+          previewImage.src = "static/images/pdf-icon.png"; // Make sure to have this icon in your static folder
+          previewArea.style.display = 'block';
+        }
+      }
+    }
+
+    // Toggle between upload and camera options
+    optionButtons.forEach(btn => {
+      btn.addEventListener('click', function () {
+        // Remove active class from all buttons
+        optionButtons.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        this.classList.add('active');
+
+        // Toggle containers based on selection
+        if (this.getAttribute('for') === 'upload-option') {
+          uploadOption.checked = true;
+          uploadContainer.classList.add('active');
+          cameraContainer.classList.remove('active');
+          stopCamera(); // Stop camera if it was on
+        } else {
+          cameraOption.checked = true;
+          cameraContainer.classList.add('active');
+          uploadContainer.classList.remove('active');
+        }
+      });
+    });
+
+    // Start camera functionality
+    startCameraBtn.addEventListener('click', function () {
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+          .then(function (mediaStream) {
+            stream = mediaStream;
+            videoElement.srcObject = mediaStream;
+            videoElement.play();
+            cameraContainer2.style.display = 'block';
+            cameraInstructions.style.display = 'none';
+          })
+          .catch(function (err) {
+            console.error("Error accessing camera: ", err);
+            alert("Could not access your camera. Please make sure it's connected and permissions are allowed.");
+          });
+      } else {
+        alert("Sorry, your browser doesn't support accessing the camera.");
+      }
+    });
+
+    // Capture image from camera
+    captureBtn.addEventListener('click', function () {
+      if (stream) {
+        // Draw the video frame to the canvas
+        canvas.width = videoElement.videoWidth;
+        canvas.height = videoElement.videoHeight;
+        canvas.getContext('2d').drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+        // Convert canvas to data URL and set to hidden input
+        const imageData = canvas.toDataURL('image/png');
+        captureData.value = imageData;
+
+        // Display the captured image in the preview
+        previewImage.src = imageData;
+        previewArea.style.display = 'block';
+
+        // Show reset button, hide capture button
+        captureBtn.style.display = 'none';
+        resetBtn.style.display = 'inline-block';
+
+        // Optional: Pause the video
+        videoElement.pause();
+      }
+    });
+
+    // Reset camera after capture
+    resetBtn.addEventListener('click', function () {
+      // Clear the captured data
+      captureData.value = '';
+      previewArea.style.display = 'none';
+
+      // Show capture button, hide reset button
+      captureBtn.style.display = 'inline-block';
+      resetBtn.style.display = 'none';
+
+      // Resume the video
+      videoElement.play();
+    });
+
+    // Stop camera when switching away or when page unloads
+    function stopCamera() {
+      if (stream) {
+        stream.getTracks().forEach(track => {
+          track.stop();
+        });
+        stream = null;
+        videoElement.srcObject = null;
+        cameraContainer2.style.display = 'none';
+        cameraInstructions.style.display = 'block';
+        captureBtn.style.display = 'inline-block';
+        resetBtn.style.display = 'none';
+        captureData.value = '';
+      }
+    }
+
+    // Stop camera when leaving page
+    window.addEventListener('beforeunload', stopCamera);
+
+    // Form submission handling
+    document.getElementById('upload-form').addEventListener('submit', function (e) {
+      const targetLanguage = document.getElementById('target-language').value;
+      if (!targetLanguage) {
+        e.preventDefault();
+        alert('Please select a target language');
+        return false;
+      }
+
+      // Check if we have an image to submit
+      const hasFileInput = fileInput.files.length > 0;
+      const hasCapturedImage = captureData.value !== '';
+
+      if (!hasFileInput && !hasCapturedImage) {
+        e.preventDefault();
+        alert('Please upload an image or capture one using your camera');
+        return false;
+      }
+
+      // Here you could add a loading spinner or other UI feedback
+      document.querySelector('#submit-btn').innerHTML = '<i class="fa fa-spinner fa-spin"></i> Processing...';
+    });
+
+    // Handle orientation changes for mobile devices
+    window.addEventListener('orientationchange', function () {
+      if (stream) {
+        // Briefly stop and restart the camera to adjust to new orientation
+        const tracks = stream.getTracks();
+        tracks.forEach(track => track.stop());
+
+        setTimeout(() => {
+          navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+            .then(function (mediaStream) {
+              stream = mediaStream;
+              videoElement.srcObject = mediaStream;
+              videoElement.play();
+            });
+        }, 500);
+      }
+    });
+  </script>
+
+  <script>
+    // Acc
+    $(document).on("click", ".naccs .menu div", function () {
+      var numberIndex = $(this).index();
+
+      if (!$(this).is("active")) {
+        $(".naccs .menu div").removeClass("active");
+        $(".naccs ul li").removeClass("active");
+
+        $(this).addClass("active");
+        $(".naccs ul").find("li:eq(" + numberIndex + ")").addClass("active");
+
+        var listItemHeight = $(".naccs ul")
+          .find("li:eq(" + numberIndex + ")")
+          .innerHeight();
+        $(".naccs ul").height(listItemHeight + "px");
+      }
+    });
+  </script>
+
+  <script>
+    document.getElementById('uploadForm').addEventListener('submit', async (e) => 
+    {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      document.getElementById('loadingSpinner').style.display = 'block';
+      document.getElementById('resultSection').style.display = 'none';
+
+      const response = await fetch('/process', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await response.json();
+      if (response.ok) {
+        document.getElementById('detectedLanguage').textContent = data.detected_language ||
+        'Unknown';
+        document.getElementById('translatedText').textContent = data.translated_text;
+        audioPlayer.src = data.audio_path + '?t=' + new Date().getTime();
+        downloadButton.href = '/download_audio';
+        downloadButton.style.display = 'block';
+        document.getElementById('resultSection').style.display = 'block';
+        alert(data.error || 'An error occurred while processing the image');
+        document.getElementById('loadingSpinner').style.display = 'none';
+      }
+    }
+
+
+
+
+
+    // preview image
+    document.getElementById('file').addEventListener('change', (e) => {
+      const preview = document.getElementById('preview');
+      const previewContainer = document.getElementById('preview-container');
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          preview.src = e.target.result;
+          previewContainer.style.display = 'block';
+        }
+        reader.readAsDataURL(file);
+      } else {
+        previewContainer.style.display = 'none';
+      }
+    });
+
+  </script>
 </body>
+
 </html>
