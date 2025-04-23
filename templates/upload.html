@@ -757,13 +757,7 @@
         alert(data.error || 'An error occurred while processing the image');
         document.getElementById('loadingSpinner').style.display = 'none';
       }
-    }
-
-
-
-
-
-    // preview image
+    });    // preview image
     document.getElementById('file').addEventListener('change', (e) => {
       const preview = document.getElementById('preview');
       const previewContainer = document.getElementById('preview-container');
