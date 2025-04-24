@@ -1,0 +1,106 @@
+2025-04-24 12:52:39,236 - __main__ - DEBUG - Request received
+2025-04-24 12:52:39,240 - __main__ - DEBUG - Files in request: ['image']
+2025-04-24 12:52:39,240 - __main__ - DEBUG - Form data in request: ['input-method', 'target-language', 'capture-data']
+2025-04-24 12:52:39,243 - __main__ - ERROR - No file part in the request
+2025-04-24 12:52:50,103 - __main__ - DEBUG - Request received
+2025-04-24 12:52:50,106 - __main__ - DEBUG - Files in request: ['image']
+2025-04-24 12:52:50,106 - __main__ - DEBUG - Form data in request: ['input-method', 'target-language', 'capture-data']
+2025-04-24 12:52:50,106 - __main__ - ERROR - No file part in the request
+2025-04-24 12:54:21,725 - __main__ - DEBUG - Request received
+2025-04-24 12:54:21,731 - __main__ - DEBUG - Files in request: ['file']
+2025-04-24 12:54:21,737 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-24 12:54:21,737 - __main__ - DEBUG - File name: White Minimalist Values and Goals A3 Poster.png
+2025-04-24 12:54:21,737 - __main__ - DEBUG - Selected language: kn
+2025-04-24 12:54:21,737 - __main__ - ERROR - Invalid language selection
+2025-04-24 12:54:43,051 - __main__ - DEBUG - Request received
+2025-04-24 12:54:43,060 - __main__ - DEBUG - Files in request: ['file']
+2025-04-24 12:54:43,060 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-24 12:54:43,061 - __main__ - DEBUG - File name: White Minimalist Values and Goals A3 Poster.png
+2025-04-24 12:54:43,061 - __main__ - DEBUG - Selected language: en
+2025-04-24 12:54:43,061 - __main__ - ERROR - Invalid language selection
+2025-04-24 12:56:02,356 - __main__ - DEBUG - Request received
+2025-04-24 12:56:02,356 - __main__ - DEBUG - Files in request: ['file']
+2025-04-24 12:56:02,356 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-24 12:56:02,356 - __main__ - DEBUG - File name: telugu.jpg
+2025-04-24 12:56:02,356 - __main__ - DEBUG - Selected language: en
+2025-04-24 12:56:02,356 - __main__ - ERROR - Invalid language selection
+2025-04-24 12:59:01,770 - __main__ - DEBUG - Request received
+2025-04-24 12:59:01,773 - __main__ - DEBUG - Files in request: ['file']
+2025-04-24 12:59:01,773 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-24 12:59:01,774 - __main__ - DEBUG - File name: telugu.jpg
+2025-04-24 12:59:01,774 - __main__ - DEBUG - Selected language: en
+2025-04-24 12:59:01,774 - __main__ - ERROR - Invalid language selection
+2025-04-24 13:00:45,328 - __main__ - DEBUG - Request received
+2025-04-24 13:00:45,334 - __main__ - DEBUG - Files in request: ['file']
+2025-04-24 13:00:45,335 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-24 13:00:45,336 - __main__ - DEBUG - File name: telugu.jpg
+2025-04-24 13:00:45,337 - __main__ - DEBUG - Selected language code: en
+2025-04-24 13:00:45,337 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-24 13:00:45,338 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-24 13:00:45,601 - __main__ - DEBUG - Image opened successfully: WEBP, size: (480, 268)
+2025-04-24 13:00:45,622 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-24 13:00:45,625 - __main__ - ERROR - Failed to process image
+2025-04-24 13:01:39,980 - __main__ - DEBUG - Request received
+2025-04-24 13:01:39,984 - __main__ - DEBUG - Files in request: ['file']
+2025-04-24 13:01:39,984 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-24 13:01:39,984 - __main__ - DEBUG - File name: telugu.jpg
+2025-04-24 13:01:39,984 - __main__ - DEBUG - Selected language code: en
+2025-04-24 13:01:39,984 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-24 13:01:39,984 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-24 13:01:40,149 - __main__ - DEBUG - Image opened successfully: WEBP, size: (480, 268)
+2025-04-24 13:01:40,149 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-24 13:01:43,599 - __main__ - DEBUG - Detected language: te
+2025-04-24 13:18:24,972 - __main__ - DEBUG - Request received
+2025-04-24 13:18:24,977 - __main__ - DEBUG - Files in request: ['file']
+2025-04-24 13:18:24,977 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-24 13:18:24,977 - __main__ - DEBUG - File name: telugu.jpg
+2025-04-24 13:18:24,977 - __main__ - DEBUG - Selected language code: bn
+2025-04-24 13:18:24,977 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-24 13:18:24,977 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-24 13:18:25,128 - __main__ - DEBUG - Image opened successfully: WEBP, size: (480, 268)
+2025-04-24 13:18:25,135 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-24 13:18:28,734 - __main__ - DEBUG - Detected language: te
+2025-04-24 13:20:28,905 - __main__ - DEBUG - Request received
+2025-04-24 13:20:28,905 - __main__ - DEBUG - Files in request: ['file']
+2025-04-24 13:20:28,905 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-24 13:20:28,905 - __main__ - DEBUG - File name: telugu.jpg
+2025-04-24 13:20:28,909 - __main__ - DEBUG - Selected language code: en
+2025-04-24 13:20:28,909 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-24 13:20:28,909 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-24 13:20:28,929 - __main__ - DEBUG - Image opened successfully: WEBP, size: (480, 268)
+2025-04-24 13:20:28,929 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-24 13:20:30,344 - __main__ - DEBUG - Detected language: te
+2025-04-24 13:20:30,827 - __main__ - DEBUG - Translated text: Victory to India
+2025-04-24 13:20:44,944 - __main__ - DEBUG - Request received
+2025-04-24 13:20:44,948 - __main__ - DEBUG - Files in request: ['file']
+2025-04-24 13:20:44,948 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-24 13:20:44,948 - __main__ - DEBUG - File name: telugu.jpg
+2025-04-24 13:20:44,948 - __main__ - DEBUG - Selected language code: en
+2025-04-24 13:20:44,948 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-24 13:20:44,948 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-24 13:20:44,968 - __main__ - DEBUG - Image opened successfully: WEBP, size: (480, 268)
+2025-04-24 13:20:44,968 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-24 13:20:46,426 - __main__ - DEBUG - Detected language: te
+2025-04-24 13:20:46,982 - __main__ - DEBUG - Translated text: Victory to India
+2025-04-24 13:23:15,627 - __main__ - DEBUG - Request received
+2025-04-24 13:23:15,637 - __main__ - DEBUG - Files in request: ['file']
+2025-04-24 13:23:15,637 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-24 13:23:15,637 - __main__ - DEBUG - File name: telugu.jpg
+2025-04-24 13:23:15,638 - __main__ - DEBUG - Selected language code: hi
+2025-04-24 13:23:15,638 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-24 13:23:15,638 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-24 13:23:15,658 - __main__ - DEBUG - Image opened successfully: WEBP, size: (480, 268)
+2025-04-24 13:23:15,660 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-24 13:23:17,272 - __main__ - DEBUG - Detected language: te
+2025-04-24 13:25:07,229 - __main__ - DEBUG - Request received
+2025-04-24 13:25:07,236 - __main__ - DEBUG - Files in request: ['file']
+2025-04-24 13:25:07,236 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-24 13:25:07,236 - __main__ - DEBUG - File name: tamil.jpg
+2025-04-24 13:25:07,236 - __main__ - DEBUG - Selected language code: en
+2025-04-24 13:25:07,239 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-24 13:25:07,239 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-24 13:25:07,272 - __main__ - DEBUG - Image opened successfully: JPEG, size: (500, 500)
+2025-04-24 13:25:07,283 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-24 13:25:08,863 - __main__ - DEBUG - Detected language: te
+2025-04-24 13:25:09,552 - __main__ - DEBUG - Translated text: Don't peel.
+Unauthorized personnel are not allowed.

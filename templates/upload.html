@@ -190,6 +190,59 @@
     .camera-option-container.active {
       display: block;
     }
+
+    .preview-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .loading-container {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #726ae3;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+      margin-top: 10px;
+      color: #726ae3;
+      font-weight: 600;
+    }
+
+    .translate-button {
+      background-color: #726ae3;
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .translate-button:hover {
+      background-color: #5d56d1;
+      transform: translateY(-2px);
+    }
+
+    .translate-button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
   </style>
 </head>
 
@@ -261,7 +314,7 @@
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="upload-container">
-            <form id="upload-form" action="/process-image" method="post" enctype="multipart/form-data">
+            <form id="uploadForm" enctype="multipart/form-data">
               <!-- Input method selection -->
               <div class="option-buttons">
                 <label class="option-btn active" for="upload-option">
@@ -340,16 +393,20 @@
                 </div>
               </div>
 
-              <div class="preview-area" id="preview-area" style="display:none;">
-                <h5>Preview</h5>
-                <img id="preview-image" class="preview-image" src="" alt="Preview">
+              <div class="preview-container">
+                <img id="preview" class="preview-image" alt="Preview">
+              </div>
+
+              <div class="loading-container" id="loadingContainer">
+                <div class="spinner"></div>
+                <div class="loading-text">Processing, please wait...</div>
               </div>
 
               <input type="hidden" id="capture-data" name="capture-data">
 
               <div class="text-center mt-4">
-                <button type="submit" id="submit-btn" class="upload-btn">
-                  <i class="fa fa-magic"></i> Translate Now
+                <button type="submit" class="translate-button" id="translateButton">
+                  Translate Now
                 </button>
               </div>
             </form>
@@ -494,8 +551,7 @@
     // For drag and drop functionality
     const dropArea = document.getElementById('drop-area');
     const fileInput = document.getElementById('file-input');
-    const previewArea = document.getElementById('preview-area');
-    const previewImage = document.getElementById('preview-image');
+    const previewImage = document.getElementById('preview');
     const fileName = document.getElementById('file-name');
     const uploadOption = document.getElementById('upload-option');
     const cameraOption = document.getElementById('camera-option');
@@ -560,16 +616,19 @@
           const reader = new FileReader();
           reader.onload = function (e) {
             previewImage.src = e.target.result;
-            previewArea.style.display = 'block';
+            previewImage.style.display = 'block';
           }
           reader.readAsDataURL(file);
         } else if (file.type === 'application/pdf') {
           // Show a generic PDF icon for PDF files
           previewImage.src = "static/images/pdf-icon.png"; // Make sure to have this icon in your static folder
-          previewArea.style.display = 'block';
+          previewImage.style.display = 'block';
         }
       }
     }
+
+    // Add event listener for file input change
+    fileInput.addEventListener('change', previewFile);
 
     // Toggle between upload and camera options
     optionButtons.forEach(btn => {
@@ -627,7 +686,7 @@
 
         // Display the captured image in the preview
         previewImage.src = imageData;
-        previewArea.style.display = 'block';
+        previewImage.style.display = 'block';
 
         // Show reset button, hide capture button
         captureBtn.style.display = 'none';
@@ -642,7 +701,7 @@
     resetBtn.addEventListener('click', function () {
       // Clear the captured data
       captureData.value = '';
-      previewArea.style.display = 'none';
+      previewImage.style.display = 'none';
 
       // Show capture button, hide reset button
       captureBtn.style.display = 'inline-block';
@@ -672,10 +731,10 @@
     window.addEventListener('beforeunload', stopCamera);
 
     // Form submission handling
-    document.getElementById('upload-form').addEventListener('submit', function (e) {
+    document.getElementById('uploadForm').addEventListener('submit', function (e) {
+      e.preventDefault();
       const targetLanguage = document.getElementById('target-language').value;
       if (!targetLanguage) {
-        e.preventDefault();
         alert('Please select a target language');
         return false;
       }
@@ -685,13 +744,66 @@
       const hasCapturedImage = captureData.value !== '';
 
       if (!hasFileInput && !hasCapturedImage) {
-        e.preventDefault();
         alert('Please upload an image or capture one using your camera');
         return false;
       }
 
-      // Here you could add a loading spinner or other UI feedback
-      document.querySelector('#submit-btn').innerHTML = '<i class="fa fa-spinner fa-spin"></i> Processing...';
+      // Show loading state
+      document.querySelector('#translateButton').disabled = true;
+      document.querySelector('#loadingContainer').style.display = 'block';
+
+      // Create FormData object
+      const formData = new FormData();
+      
+      // Add the file if uploaded
+      if (hasFileInput) {
+        formData.append('file', fileInput.files[0]);
+      }
+      // Add the captured image if using camera
+      else if (hasCapturedImage) {
+        // Convert base64 to blob
+        const base64Data = captureData.value.split(',')[1];
+        const byteCharacters = atob(base64Data);
+        const byteArrays = [];
+        for (let i = 0; i < byteCharacters.length; i++) {
+          byteArrays.push(byteCharacters.charCodeAt(i));
+        }
+        const byteArray = new Uint8Array(byteArrays);
+        const blob = new Blob([byteArray], { type: 'image/png' });
+        formData.append('file', blob, 'capture.png');
+      }
+
+      // Add language
+      formData.append('language', targetLanguage);
+
+      // Send the request
+      fetch('/process', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.error) {
+          alert(data.error);
+        } else {
+          // Redirect to results page with the data
+          const params = new URLSearchParams({
+            detected_language: data.detected_language || 'Unknown',
+            translated_text: data.translated_text || 'No translation available',
+            audio_path: data.audio_path || ''
+          });
+          window.location.href = `/results?${params.toString()}`;
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while processing the image');
+      })
+      .finally(() => {
+        // Reset loading state
+        document.querySelector('#translateButton').disabled = false;
+        document.querySelector('#loadingContainer').style.display = 'none';
+      });
     });
 
     // Handle orientation changes for mobile devices
