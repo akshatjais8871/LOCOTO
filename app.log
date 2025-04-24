@@ -104,3 +104,19 @@
 2025-04-24 13:25:08,863 - __main__ - DEBUG - Detected language: te
 2025-04-24 13:25:09,552 - __main__ - DEBUG - Translated text: Don't peel.
 Unauthorized personnel are not allowed.
+2025-04-24 14:27:57,465 - __main__ - DEBUG - Request received
+2025-04-24 14:27:57,465 - __main__ - DEBUG - Files in request: ['file']
+2025-04-24 14:27:57,465 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-24 14:27:57,465 - __main__ - DEBUG - File name: just-good-thought-original-imagf97q8huhrjgh.webp
+2025-04-24 14:27:57,465 - __main__ - DEBUG - Selected language code: hi
+2025-04-24 14:27:57,465 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-24 14:27:57,465 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-24 14:27:57,742 - __main__ - DEBUG - Image opened successfully: WEBP, size: (667, 1000)
+2025-04-24 14:27:57,792 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-24 14:28:02,520 - __main__ - DEBUG - Detected text: Just Good
+Thought
+
+Look at the world from a practical perspective
+
+Anubhav Shrivastava
+2025-04-24 14:28:03,309 - __main__ - DEBUG - Detected language: en
