@@ -159,3 +159,220 @@ Anubhav Shrivastava
 2025-04-25 14:24:38,691 - __main__ - DEBUG - Image opened successfully: JPEG, size: (500, 500)
 2025-04-25 14:24:38,701 - __main__ - DEBUG - Image converted to base64 successfully
 2025-04-25 14:24:42,557 - __main__ - DEBUG - Detected language: te
+2025-04-25 14:40:51,804 - __main__ - DEBUG - Request received
+2025-04-25 14:40:51,820 - __main__ - DEBUG - Files in request: ['file']
+2025-04-25 14:40:51,820 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-25 14:40:51,820 - __main__ - DEBUG - File name: 7f802d13-f6e3-4476-a9a8-37c7ac9733c7.jpeg
+2025-04-25 14:40:51,820 - __main__ - DEBUG - Selected language code: hi
+2025-04-25 14:40:51,820 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-25 14:40:51,820 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-25 14:40:51,904 - __main__ - DEBUG - Image opened successfully: JPEG, size: (2560, 2560)
+2025-04-25 14:40:52,120 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-25 14:41:14,860 - __main__ - DEBUG - Detected text: OTE LOCOTO
+2025-04-25 14:41:15,698 - __main__ - DEBUG - Detected language: pt
+2025-04-25 14:42:54,991 - __main__ - DEBUG - Request received
+2025-04-25 14:42:54,991 - __main__ - DEBUG - Files in request: ['file']
+2025-04-25 14:42:54,991 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-25 14:42:54,991 - __main__ - DEBUG - File name: medium-new-framed-quote-6-photo-frame-of-inspirational-thoughts-original-imafw2tuztqhbfja.webp
+2025-04-25 14:42:54,995 - __main__ - DEBUG - Selected language code: hi
+2025-04-25 14:42:54,995 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-25 14:42:54,995 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-25 14:42:55,288 - __main__ - DEBUG - Image opened successfully: WEBP, size: (778, 1000)
+2025-04-25 14:42:55,322 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-25 14:42:59,023 - __main__ - DEBUG - Detected text: Sturdy Edges
+WORK HARD
+IN SILENCE,
+LET SUCCESS
+BE YOUR
+NOISE.
+
+-Frank Ocean
+2025-04-25 14:42:59,739 - __main__ - DEBUG - Detected language: en
+2025-04-25 14:46:15,794 - __main__ - DEBUG - Request received
+2025-04-25 14:46:15,794 - __main__ - DEBUG - Files in request: ['file']
+2025-04-25 14:46:15,794 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-25 14:46:15,794 - __main__ - DEBUG - File name: medium-new-framed-quote-6-photo-frame-of-inspirational-thoughts-original-imafw2tuztqhbfja.webp
+2025-04-25 14:46:15,794 - __main__ - DEBUG - Selected language code: ta
+2025-04-25 14:46:15,794 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-25 14:46:15,794 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-25 14:46:15,810 - __main__ - DEBUG - Image opened successfully: WEBP, size: (778, 1000)
+2025-04-25 14:46:15,855 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-25 14:46:18,288 - __main__ - DEBUG - Detected text: Sturdy Edges
+WORK HARD
+IN SILENCE,
+LET SUCCESS
+BE YOUR
+NOISE.
+-Frank Ocean
+2025-04-25 14:46:18,292 - __main__ - DEBUG - Detected language: en
+2025-04-25 14:49:46,975 - __main__ - DEBUG - Request received
+2025-04-25 14:49:46,993 - __main__ - DEBUG - Files in request: ['file']
+2025-04-25 14:49:46,993 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-25 14:49:46,993 - __main__ - DEBUG - File name: WhatsApp Image 2025-03-24 at 17.52.00_05907463.jpg
+2025-04-25 14:49:46,995 - __main__ - DEBUG - Selected language code: hi
+2025-04-25 14:49:46,995 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-25 14:49:46,995 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-25 14:49:47,014 - __main__ - DEBUG - Image opened successfully: JPEG, size: (2734, 3828)
+2025-04-25 14:49:47,419 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-25 14:49:58,449 - __main__ - DEBUG - Detected text: BABU BANARASI DAS UNIVERSITY
+BBD City, Faizabad Road, Lucknow Uttar Pradesh - 226028 India
+School of Computer Applications
+Ref. BBDU/SCA/PRLTRG/2025/
+March 24, 2025
+Sub: Regarding Mid Semester Project Presentation and Evaluation of BCA(DS&AI) VI
+Semester Students.
+
+Dear Students,
+
+As per the information available with the Department, you are undergoing BCA(DS&AI) VI
+Semester Project Training
+
+In continuation of the earlier notification in form of separate notice as well as the Academic Calendar
+at the start of the Semester in this regard, you are being reminded that you have to appear for Mid
+Semester Presentation & Evaluation of the Project Work before a Panel of Evaluators appointed by
+the Department on prescribed dates notified earlier (i.e. March 29, 2025 onwards). You have to
+report in the School of Computer Applications at 9:30 a.m.
+
+In Mid Term Evaluation, you will have to present your Project through Power Point Presentation
+and demonstrating the work you have accomplished and the progress made on your project so far.
+The presentation must include Problem Statement; Requirement Analysis & Planning Steps;
+Software Requirement Specification; System Analysis Stages; Logical and Physical Design of the
+System; and the Tools and Platform being used to develop the said Software Project.
+
+You are also advised to bring the duly filled-in Training Detail Proforma, while coming to present
+your Project without any fail, if not submitted so far.
+
+For any clarification or support regarding your project, feel free to get in touch with Dr. Syed Anas
+Ansar and Ms. Sakshi Pandey, T&P Coordinator, who is ready to assist you.
+
+Wishing you a journey filled with triumphs and boundless opportunities for success.
+
+Dr. Syed Anas Ansar
+T&P Coordinator (SCA), BBDU
+
+Dr. Prabhash Ch. Pathak
+HEAD (SCA), BBDU
+
+Dr. Reena Srivastava
+DEAN (SCA), BBDU
+
+I Floor, CA-Block, BBD University, BBD City, Faizabad Road, Lucknow (U. P.) INDIA 226028
+PHONE: HEAD: 0522-6196242 Dept. T&P Cell: 9990462250
+www.bbdu.ac.in
+2025-04-25 14:49:58,462 - __main__ - DEBUG - Detected language: en
+2025-04-25 14:52:23,497 - __main__ - DEBUG - Request received
+2025-04-25 14:52:23,513 - __main__ - DEBUG - Files in request: ['file']
+2025-04-25 14:52:23,516 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-25 14:52:23,516 - __main__ - DEBUG - File name: WhatsApp Image 2025-03-24 at 17.52.00_05907463.jpg
+2025-04-25 14:52:23,516 - __main__ - DEBUG - Selected language code: en
+2025-04-25 14:52:23,516 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-25 14:52:23,516 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-25 14:52:23,543 - __main__ - DEBUG - Image opened successfully: JPEG, size: (2734, 3828)
+2025-04-25 14:52:23,931 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-25 14:52:54,705 - __main__ - DEBUG - Detected text: BABU BANARASI DAS UNIVERSITY
+BBD City, Faizabad Road, Lucknow Uttar Pradesh - 226028 India
+
+School of Computer Applications
+
+Ref. BBDU/SCA/PRLTRG/2025/
+March 24, 2025
+
+Sub: Regarding Mid Semester Project Presentation and Evaluation of BCA(DS&AI) VI
+Semester Students.
+
+Dear Students,
+
+As per the information available with the Department, you are undergoing BCA(DS&AI) VI
+Semester Project Training
+
+In continuation of the earlier notification in form of separate notice as well as the Academic Calendar
+at the start of the Semester in this regard, you are being reminded that you have to appear for Mid
+Semester Presentation & Evaluation of the Project Work before a Panel of Evaluators appointed by
+the Department on prescribed dates notified earlier (i.e. March 29, 2025 onwards). You have to
+report in the School of Computer Applications at 9:30 a.m.
+
+In Mid Term Evaluation, you will have to present your Project through Power Point Presentation
+and demonstrating the work you have accomplished and the progress made on your project so far.
+The presentation must include Problem Statement; Requirement Analysis & Planning Steps;
+Software Requirement Specification; System Analysis Stages; Logical and Physical Design of the
+System; and the Tools and Platform being used to develop the said Software Project.
+
+You are also advised to bring the duly filled-in Training Detail Proforma, while coming to present
+your Project without any fail, if not submitted so far.
+
+For any clarification or support regarding your project, feel free to get in touch with Dr. Syed Anas
+Ansar and Ms. Sakshi Pandey, T&P Coordinator, who is ready to assist you.
+
+Wishing you a journey filled with triumphs and boundless opportunities for success.
+
+Dr. Syed Anas Ansar
+T&P Coordinator (SCA), BBDU
+
+Dr. Prabhash Ch. Pathak
+HEAD (SCA), BBDU
+
+Dr. Reena Srivastava
+DEAN (SCA), BBDU
+
+I Floor, CA-Block, BBD University, BBD City, Faizabad Road, Lucknow (U. P.) INDIA 226028
+PHONE: HEAD: 0522-6196242 Dept. T&P Cell: 9990462250
+
+www.bbdu.ac.in
+2025-04-25 14:52:54,720 - __main__ - DEBUG - Detected language: en
+2025-04-25 14:52:57,849 - __main__ - DEBUG - Translated text: BABU BANARASI DAS UNIVERSITY
+BBD City, Faizabad Road, Lucknow Uttar Pradesh - 226028 India
+
+School of Computer Applications
+
+Ref. BBDU/SCA/PRLTRG/2025/
+March 24, 2025
+
+Sub: Regarding Mid Semester Project Presentation and Evaluation of BCA(DS&AI) VI
+Semester Students.
+
+Dear Students,
+
+This is a reminder regarding your BCA(DS&AI) VI Semester Project Training.  As previously notified in separate notices and the academic calendar, your Mid Semester Project Presentation & Evaluation will take place before a panel of evaluators starting March 29, 2025.  Please report to the School of Computer Applications at 9:30 a.m. on your assigned date.
+
+Your mid-term evaluation will involve a PowerPoint presentation demonstrating your project's progress.  This presentation must include: Problem Statement; Requirement Analysis & Planning Steps; Software Requirement Specification; System Analysis Stages; Logical and Physical Design of the System; and the Tools and Platform used.
+
+Please bring your completed Training Detail Proforma.
+
+For assistance, contact Dr. Syed Anas Ansar and Ms. Sakshi Pandey, T&P Coordinator.
+
+We wish you success.
+
+Dr. Syed Anas Ansar
+T&P Coordinator (SCA), BBDU
+
+Dr. Prabhash Ch. Pathak
+HEAD (SCA), BBDU
+
+Dr. Reena Srivastava
+DEAN (SCA), BBDU
+
+I Floor, CA-Block, BBD University, BBD City, Faizabad Road, Lucknow (U. P.) INDIA 226028
+PHONE: HEAD: 0522-6196242 Dept. T&P Cell: 9990462250
+
+www.bbdu.ac.in
+2025-04-25 15:31:20,850 - __main__ - DEBUG - Request received
+2025-04-25 15:31:20,854 - __main__ - DEBUG - Files in request: ['file']
+2025-04-25 15:31:20,854 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-25 15:31:20,854 - __main__ - DEBUG - File name: 1709107457393.png
+2025-04-25 15:31:20,854 - __main__ - DEBUG - Selected language code: hi
+2025-04-25 15:31:20,854 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-25 15:31:20,854 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-25 15:31:20,889 - __main__ - DEBUG - Image opened successfully: PNG, size: (1280, 720)
+2025-04-25 15:31:20,889 - __main__ - DEBUG - Converting image to RGB
+2025-04-25 15:31:20,907 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-25 15:31:24,172 - __main__ - DEBUG - Detected text: Plan
+Design
+Deploy
+Test
+Review
+Develop
+Launch
+
+AGILE
+METHODOLOGY
+2025-04-25 15:31:24,530 - __main__ - DEBUG - Detected language: en
