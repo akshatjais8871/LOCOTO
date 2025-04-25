@@ -120,3 +120,42 @@ Look at the world from a practical perspective
 
 Anubhav Shrivastava
 2025-04-24 14:28:03,309 - __main__ - DEBUG - Detected language: en
+2025-04-25 14:16:29,064 - __main__ - DEBUG - Request received
+2025-04-25 14:16:29,064 - __main__ - DEBUG - Files in request: ['file']
+2025-04-25 14:16:29,064 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-25 14:16:29,064 - __main__ - DEBUG - File name: tamil.jpg
+2025-04-25 14:16:29,068 - __main__ - DEBUG - Selected language code: mr
+2025-04-25 14:16:29,068 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-25 14:16:29,068 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-25 14:16:29,125 - __main__ - DEBUG - Image opened successfully: JPEG, size: (500, 500)
+2025-04-25 14:16:29,149 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-25 14:16:56,625 - __main__ - DEBUG - Request received
+2025-04-25 14:16:56,625 - __main__ - DEBUG - Files in request: ['file']
+2025-04-25 14:16:56,625 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-25 14:16:56,633 - __main__ - DEBUG - File name: tamil.jpg
+2025-04-25 14:16:56,633 - __main__ - DEBUG - Selected language code: mr
+2025-04-25 14:16:56,633 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-25 14:16:56,633 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-25 14:16:56,689 - __main__ - DEBUG - Image opened successfully: JPEG, size: (500, 500)
+2025-04-25 14:16:56,692 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-25 14:16:59,991 - __main__ - DEBUG - Detected language: te
+2025-04-25 14:20:52,405 - __main__ - DEBUG - Request received
+2025-04-25 14:20:52,408 - __main__ - DEBUG - Files in request: ['file']
+2025-04-25 14:20:52,408 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-25 14:20:52,408 - __main__ - DEBUG - File name: marathi.jpg
+2025-04-25 14:20:52,408 - __main__ - DEBUG - Selected language code: ur
+2025-04-25 14:20:52,408 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-25 14:20:52,408 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-25 14:20:52,519 - __main__ - DEBUG - Image opened successfully: JPEG, size: (500, 500)
+2025-04-25 14:20:52,542 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-25 14:20:56,653 - __main__ - DEBUG - Detected language: mr
+2025-04-25 14:24:38,609 - __main__ - DEBUG - Request received
+2025-04-25 14:24:38,609 - __main__ - DEBUG - Files in request: ['file']
+2025-04-25 14:24:38,609 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-25 14:24:38,609 - __main__ - DEBUG - File name: tamil.jpg
+2025-04-25 14:24:38,609 - __main__ - DEBUG - Selected language code: hi
+2025-04-25 14:24:38,609 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-25 14:24:38,609 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-25 14:24:38,691 - __main__ - DEBUG - Image opened successfully: JPEG, size: (500, 500)
+2025-04-25 14:24:38,701 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-25 14:24:42,557 - __main__ - DEBUG - Detected language: te
