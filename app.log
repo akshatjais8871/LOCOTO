@@ -376,3 +376,120 @@ Launch
 AGILE
 METHODOLOGY
 2025-04-25 15:31:24,530 - __main__ - DEBUG - Detected language: en
+2025-04-25 20:37:41,966 - __main__ - DEBUG - Request received
+2025-04-25 20:37:41,966 - __main__ - DEBUG - Files in request: ['file']
+2025-04-25 20:37:41,966 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-25 20:37:41,966 - __main__ - DEBUG - File name: sanskrit_facts_arungeek-927x500_110916-102643.webp
+2025-04-25 20:37:41,966 - __main__ - DEBUG - Selected language code: hi
+2025-04-25 20:37:41,966 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-25 20:37:41,966 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-25 20:37:42,250 - __main__ - DEBUG - Image opened successfully: WEBP, size: (800, 419)
+2025-04-25 20:37:42,289 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-25 20:37:52,734 - __main__ - DEBUG - Request received
+2025-04-25 20:37:52,737 - __main__ - DEBUG - Files in request: ['file']
+2025-04-25 20:37:52,737 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-25 20:37:52,737 - __main__ - DEBUG - File name: sanskrit_facts_arungeek-927x500_110916-102643.webp
+2025-04-25 20:37:52,737 - __main__ - DEBUG - Selected language code: hi
+2025-04-25 20:37:52,737 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-25 20:37:52,737 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-25 20:37:52,840 - __main__ - DEBUG - Image opened successfully: WEBP, size: (800, 419)
+2025-04-25 20:37:52,854 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-25 20:37:56,739 - __main__ - DEBUG - Detected language: hi
+2025-04-25 20:38:37,640 - __main__ - DEBUG - Request received
+2025-04-25 20:38:37,643 - __main__ - DEBUG - Files in request: ['file']
+2025-04-25 20:38:37,643 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-25 20:38:37,643 - __main__ - DEBUG - File name: introducing-custom-calligraphy-text-vector-260nw-2467100687.webp
+2025-04-25 20:38:37,643 - __main__ - DEBUG - Selected language code: hi
+2025-04-25 20:38:37,643 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-25 20:38:37,643 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-25 20:38:37,659 - __main__ - DEBUG - Image opened successfully: WEBP, size: (520, 280)
+2025-04-25 20:38:37,674 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-25 20:38:38,790 - __main__ - DEBUG - Detected text: Introducing
+2025-04-25 20:38:38,810 - __main__ - DEBUG - Detected language: en
+2025-04-25 20:40:59,035 - __main__ - DEBUG - Request received
+2025-04-25 20:40:59,035 - __main__ - DEBUG - Files in request: ['file']
+2025-04-25 20:40:59,035 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-25 20:40:59,035 - __main__ - DEBUG - File name: sanskrit-language-shloka-lord-ganesha-260nw-2329402893.webp
+2025-04-25 20:40:59,035 - __main__ - DEBUG - Selected language code: en
+2025-04-25 20:40:59,035 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-25 20:40:59,035 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-25 20:40:59,060 - __main__ - DEBUG - Image opened successfully: WEBP, size: (520, 280)
+2025-04-25 20:40:59,060 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-25 20:41:00,940 - __main__ - DEBUG - Detected language: hi
+2025-04-25 20:41:01,694 - __main__ - DEBUG - Translated text: O Lord Ganesha, whose trunk is curved, whose body is large, and whose brilliance equals a million suns, please remove all obstacles from my endeavors, always.
+2025-04-25 20:41:36,847 - __main__ - DEBUG - Request received
+2025-04-25 20:41:36,847 - __main__ - DEBUG - Files in request: ['file']
+2025-04-25 20:41:36,847 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-25 20:41:36,847 - __main__ - DEBUG - File name: sanskrit-language-shloka-lord-ganesha-260nw-2329402893.webp
+2025-04-25 20:41:36,847 - __main__ - DEBUG - Selected language code: hi
+2025-04-25 20:41:36,847 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-25 20:41:36,847 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-25 20:41:36,875 - __main__ - DEBUG - Image opened successfully: WEBP, size: (520, 280)
+2025-04-25 20:41:36,887 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-25 20:41:38,510 - __main__ - DEBUG - Detected language: mr
+2025-04-25 20:42:14,701 - __main__ - DEBUG - Request received
+2025-04-25 20:42:14,703 - __main__ - DEBUG - Files in request: ['file']
+2025-04-25 20:42:14,703 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-25 20:42:14,703 - __main__ - DEBUG - File name: 64f49a3b1c30f3f76fb028f11e9023c6.jpg
+2025-04-25 20:42:14,703 - __main__ - DEBUG - Selected language code: en
+2025-04-25 20:42:14,703 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-25 20:42:14,703 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-25 20:42:14,726 - __main__ - DEBUG - Image opened successfully: JPEG, size: (452, 640)
+2025-04-25 20:42:14,756 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-25 20:42:17,157 - __main__ - DEBUG - Detected text: Our World
+
+The grass is green,
+The sky is blue,
+The moon is white,
+The clouds are, too.
+The sun is yellow,
+The trees are brown,
+The leaves are red
+When falling down.
+The sunset's orange,
+The air is clear,
+What a colorful world
+We have right here!
+
+© Copyright English Created Resources 2020
+2025-04-25 20:42:17,166 - __main__ - DEBUG - Detected language: en
+2025-04-25 20:42:18,194 - __main__ - DEBUG - Translated text: Our World
+
+The grass is green,
+The sky is blue,
+The moon is white,
+The clouds are, too.
+The sun is yellow,
+The trees are brown,
+The leaves are red
+When falling down.
+The sunset's orange,
+The air is clear,
+What a colorful world
+We have right here!
+2025-04-25 20:43:30,327 - __main__ - DEBUG - Request received
+2025-04-25 20:43:30,331 - __main__ - DEBUG - Files in request: ['file']
+2025-04-25 20:43:30,331 - __main__ - DEBUG - Form data in request: ['language']
+2025-04-25 20:43:30,331 - __main__ - DEBUG - File name: 64f49a3b1c30f3f76fb028f11e9023c6.jpg
+2025-04-25 20:43:30,331 - __main__ - DEBUG - Selected language code: hi
+2025-04-25 20:43:30,331 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-04-25 20:43:30,331 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-04-25 20:43:30,345 - __main__ - DEBUG - Image opened successfully: JPEG, size: (452, 640)
+2025-04-25 20:43:30,364 - __main__ - DEBUG - Image converted to base64 successfully
+2025-04-25 20:43:32,231 - __main__ - DEBUG - Detected text: Our World
+
+The grass is green,
+The sky is blue,
+The moon is white,
+The clouds are, too.
+The sun is yellow,
+The trees are brown,
+The leaves are red
+When falling down.
+The sunset's orange,
+The air is clear,
+What a colorful world
+We have right here!
+
+© Copyright English Created Resources 2020
+2025-04-25 20:43:32,234 - __main__ - DEBUG - Detected language: en
