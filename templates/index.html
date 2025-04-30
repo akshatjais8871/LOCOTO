@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +21,137 @@
     <link rel="stylesheet" href="static/css/templatemo-onix-digital.css">
     <link rel="stylesheet" href="static/css/animated.css">
     <link rel="stylesheet" href="static/css/owl.css">
+    <style>
+      /* Custom Animations */
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0px); }
+      }
+
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Translucent Effects */
+      .translucent-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 20px;
+        margin: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .translucent-card:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-5px);
+      }
+
+      /* Animation Classes */
+      .float-animation {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .pulse-animation {
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 1s ease-out forwards;
+      }
+
+      /* Enhanced Header Text */
+      .header-text h1, .header-text h6 {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Service Cards Enhancement */
+      .item {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Contact Form Enhancement */
+      .contact-us form {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 30px;
+      }
+
+      /* Portfolio Items Enhancement */
+      .thumb {
+        overflow: hidden;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+      }
+
+      .thumb:hover {
+        transform: scale(1.05);
+      }
+
+      .thumb img {
+        transition: all 0.3s ease;
+      }
+
+      .thumb:hover img {
+        transform: scale(1.1);
+      }
+
+      /* Hindi Taglines Styles */
+      .hindi-tagline {
+          font-size: 2.4rem;
+          font-weight: 700;
+          color: #2c3e50;
+          margin-bottom: 20px;
+          line-height: 1.4;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .transliteration {
+          font-size: 1.4rem;
+          color: #666;
+          margin-bottom: 15px;
+          font-style: italic;
+          background: rgba(255, 255, 255, 0.1);
+          padding: 10px 20px;
+          border-radius: 25px;
+          display: inline-block;
+      }
+
+      .translation {
+          font-size: 1.5rem;
+          color: #4a90e2;
+          font-weight: 600;
+          background: rgba(74, 144, 226, 0.1);
+          padding: 15px 25px;
+          border-radius: 30px;
+          display: inline-block;
+          box-shadow: 0 4px 15px rgba(74, 144, 226, 0.2);
+      }
+    </style>
 <!--
 
 TemplateMo 565 Onix Digital
@@ -85,28 +215,42 @@ https://templatemo.com/tm-565-onix-digital
           <div class="row">
             <div class="col-lg-6 align-self-center">
               <div class="owl-carousel owl-banner">
-                <div class="item header-text">
-                  <h1>🌍 WELCOME TO LOCOTO</h1>
-                  <h6><em>– Language Without Barriers</em></h6>
+                <div class="item header-text fade-in-up">
+                  <h1 class="float-animation">🌍 WELCOME TO LOCOTO</h1>
+                  <h6 class="pulse-animation"><em>– Language Without Barriers</em></h6>
                   <p>📸 Scan. Translate. Listen. Understand.</p>
                   <div class="down-buttons">
-                    <div class="main-blue-button-hover">
+                    <div class="main-blue-button-hover translucent-card">
                       <a href="#contact">Message Us Now</a>
                     </div>
-                  <div class="call-button">
+                    <div class="call-button">
                     </div>
                   </div>
                 </div>
-                <div class="item header-text">
-                  <h2>🔎 What is LOCOTO?</h2>
-                  <h6>LOCOTO is a smart, real-time image-to-text translation and speech platform.<br>
-                    <span> LOCOTO will extract, translate, and even read it aloud — all in your preferred regional language.</span></h6>
-                  <p>Perfect for travelers, students, educators, and anyone looking to break down language walls in everyday life.Thank you.</p>
-                  <div class="down-buttons">
-                    <div class="main-blue-button-hover">
-                      <a href="#services">Our Services</a>
-                    </div>
-                  </div>
+                <div class="item header-text fade-in-up">
+                  <div class="hindi-tagline">🇮🇳 हर भाषा की आवाज़, हर दिल की बात।</div>
+                  <div class="transliteration">🎵 Har bhasha ki awaaz, har dil ki baat.</div>
+                  <div class="translation">💬 Voice of every language, words from every heart.</div>
+                </div>
+                <div class="item header-text fade-in-up">
+                  <div class="hindi-tagline">🇮🇳 इमेज से आवाज़ तक — अब भाषा कोई बाधा नहीं।</div>
+                  <div class="transliteration">📸 Image se awaaz tak — ab bhasha koi baadha nahi.</div>
+                  <div class="translation">🔊 From image to voice — no more language barriers.</div>
+                </div>
+                <div class="item header-text fade-in-up">
+                  <div class="hindi-tagline">🇮🇳 अब हर तस्वीर बोलेगी आपकी भाषा में।</div>
+                  <div class="transliteration">🖼️ Ab har tasveer bolegi aapki bhasha mein.</div>
+                  <div class="translation">🗣️ Now every picture will speak your language.</div>
+                </div>
+                <div class="item header-text fade-in-up">
+                  <div class="hindi-tagline">🇮🇳 तकनीक जो जोड़े, भाषा नहीं तोड़े।</div>
+                  <div class="transliteration">⚡ Takneek jo jode, bhasha nahi tode.</div>
+                  <div class="translation">🌐 Technology that connects, not divides through language.</div>
+                </div>
+                <div class="item header-text fade-in-up">
+                  <div class="hindi-tagline">🇮🇳 तस्वीरों की जुबां, आपकी बोली में।</div>
+                  <div class="transliteration">📷 Tasveeron ki zubaan, aapki boli mein.</div>
+                  <div class="translation">💭 The language of images — in your dialect.</div>
                 </div>
               </div>
             </div>
@@ -126,7 +270,7 @@ https://templatemo.com/tm-565-onix-digital
       </div>
       <div class="row">
         <div class="col-lg-6 offset-lg-3">
-          <div class="section-heading">
+          <div class="section-heading fade-in-up">
             <h2>🧠How<em> It</em> Works With<span> Our Tools</span></h2>
             <span>Our Services</span>
           </div>
@@ -135,27 +279,26 @@ https://templatemo.com/tm-565-onix-digital
       <div class="row">
         <div class="col-lg-12">
           <div class="owl-carousel owl-services">
-            <div class="item">
+            <div class="item translucent-card fade-in-up">
               <h4>Scan an Image </h4>
               <div class="icon"><img src="static/images/service-icon-01.png" alt=""></div>
               <p> Upload a photo or scan a document with text.</p>
             </div>
-            <div class="item">
+            <div class="item translucent-card fade-in-up">
               <h4>Instant OCR & Language Detection</h4>
               <div class="icon"><img src="static/images/service-icon-02.png" alt=""></div>
               <p>Our engine reads the text and detects the language instantly.</p>
             </div>
-            <div class="item">
+            <div class="item translucent-card fade-in-up">
               <h4>Real-Time Translationt</h4>
               <div class="icon"><img src="static/images/service-icon-03.png" alt=""></div>
               <p>Converts it to your chosen regional language, preserving cultural and linguistic nuances.</p>
             </div>
-            <div class="item">
+            <div class="item translucent-card fade-in-up">
               <h4>Text-to-Speech (TTS)</h4>
               <div class="icon"><img src="static/images/service-icon-04.png" alt=""></div>
               <p>Prefer listening? Our TTS engine reads the translation aloud for you!</p>
             </div>
-            
           </div>
         </div>
       </div>
@@ -272,20 +415,18 @@ https://templatemo.com/tm-565-onix-digital
     <div class="container">
       <div class="row">
         <div class="col-lg-7">
-          <div class="section-heading">
+          <div class="section-heading fade-in-up">
             <h2>Feel free to <em>Contact</em> us via the <span>form</span></h2>
-            <div id="map">
+            <div id="map" class="translucent-card">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1779.8398194660651!2d80.94023014633468!3d26.85013998728267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd1ca1b7057f%3A0x8932f633116edfbc!2sHazratganj%20Metro%20Station!5e0!3m2!1sen!2sin!4v1744560566391!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              <!-- <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="360px" frameborder="0" style="border:0" allowfullscreen=""></iframe> -->
             </div>
-            <div class="info">
-              <!-- <span><i class="fa fa-phone"></i> <a href="#">010-020-0340<br>090-080-0760</a></span> -->
+            <div class="info translucent-card">
               <span><i class="fa fa-envelope"></i> <a href="#">info@Locoto.com<br>mail@Locoto.com</a></span>
             </div>
           </div>
         </div>
         <div class="col-lg-5 align-self-center">
-          <form id="contact" action="" method="get">
+          <form id="contact" action="" method="get" class="translucent-card">
             <div class="row">
               <div class="col-lg-12">
                 <fieldset>
@@ -309,7 +450,7 @@ https://templatemo.com/tm-565-onix-digital
               </div>
               <div class="col-lg-12">
                 <fieldset>
-                  <button type="submit" id="form-submit" class="main-button">Submit Request</button>
+                  <button type="submit" id="form-submit" class="main-button pulse-animation">Submit Request</button>
                 </fieldset>
               </div>
             </div>
