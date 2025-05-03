@@ -236,13 +236,19 @@
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="/">Home</a></li>
-              <li class="scroll-to-section"><a href="register" class="active">Sign-Up</a></li>
-              <li class="scroll-to-section"><a href="login">Sign-In</a></li>
-              <li class="scroll-to-section"><a href="upload">Upload</a></li>  
-              <li class="scroll-to-section"><a href="aboutus">About Us</a></li>
-              <li class="scroll-to-section"><div class="main-red-button-hover"><a href="/#contact">Contact Us Now</a></div></li> 
-            </ul>        
+              <ul class="nav">
+                <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
+                {% if not session.get('logged_in') %}
+                  <li class="scroll-to-section"><a href="register">Sign-Up</a></li>
+                  <li class="scroll-to-section"><a href="login">Sign-In</a></li>
+                {% else %}
+                  <li class="scroll-to-section"><a href="#">Welcome, {{ session.get('username') }}</a></li>
+                  <li class="scroll-to-section"><a href="upload">Upload</a></li>  
+                  <li class="scroll-to-section"><a href="logout">Logout</a></li>
+                {% endif %}
+                <li class="scroll-to-section"><a href="aboutus">About Us</a></li>
+                <li class="scroll-to-section"><div class="main-red-button-hover"><a href="#contact">Contact Us Now</a></div></li> 
+              </ul>        
             <a class='menu-trigger'>
                 <span>Menu</span>
             </a>
@@ -283,19 +289,6 @@
                   <input type="password" id="confirm_password" name="confirm_password" required>
                 </div>
                 <button type="submit" class="register-btn">Sign Up</button>
-                <div class="or-divider">or</div>
-                <button type="button" class="google-btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px" class="google-icon">
-                    <path fill="#4285F4" d="M44.5,20H24v8.5h11.7c-1.1,3.2-3.6,5.7-6.7,6.9l6.7,5.2c3.9-3.6,6.3-8.8,6.3-14.6C44.7,24.9,44.6,22.4,44.5,20z"/>
-                    <path fill="#34A853" d="M24,44c5.9,0,10.8-1.9,14.4-5.1l-6.7-5.2c-2,1.3-4.6,2-7.7,2c-5.9,0-10.8-4-12.6-9.4l-7.2,5.6C8.9,39.7,15.9,44,24,44z"/>
-                    <path fill="#FBBC05" d="M11.4,26.3c-0.5-1.3-0.8-2.7-0.8-4.3s0.3-3,0.8-4.3l-7.2-5.6C2.3,15.6,1,19.1,1,22.8s1.3,7.2,3.2,10.7L11.4,26.3z"/>
-                    <path fill="#EA4335" d="M24,9.5c3.2,0,6.1,1.1,8.4,3.2l6.3-6.3C34.8,2.9,29.9,1,24,1c-8.1,0-15.1,4.3-19.2,10.7l7.2,5.6C13.2,13.5,18.1,9.5,24,9.5z"/>
-                  </svg>
-                  Sign up with Google
-                </button>
-                <div class="login-link">
-                  Already have an account? <a href="login">Sign In</a>
-                </div>
               </form>
             </div>
           </div>
@@ -311,19 +304,9 @@
   <footer>
     <div class="container">
       <div class="row">
-        <div class="col-lg-3">
-          <div class="about footer-item">
-            <div class="logo">
-              <img src="static/images/ChatGPT Image Apr 13, 2025, 03_15_04 PM.png" alt="LOCOTO">
-            </div>
-            <h4>info@Locoto.com</h4>
-          </div>
-        </div>
         <div class="col-lg-12">
           <div class="copyright">
-            <p>Copyright © 2025 LOCOTO | All Rights Reserved. 
-            <br>
-            Designed by <a rel="nofollow" href="https://templatemo.com" title="free CSS templates">Two Brothers</a></p>
+            <p>Copyright © 2025 DIGIPODIUM | All Rights Reserved. 
           </div>
         </div>
       </div>

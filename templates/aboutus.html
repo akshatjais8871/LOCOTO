@@ -256,13 +256,19 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="index">Home</a></li>
-                            <li class="scroll-to-section"><a href="register">Sign-Up</a></li>
-                            <li class="scroll-to-section"><a href="login">Sign-In</a></li>
-                            <li class="scroll-to-section"><a href="upload">Upload</a></li>  
-                            <li class="scroll-to-section"><a href="aboutus" class="active">About Us</a></li>
+                            <!-- <li class="scroll-to-section"><a href="/">Home</a></li> -->
+                            <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
+                            {% if not session.get('logged_in') %}
+                              <li class="scroll-to-section"><a href="register">Sign-Up</a></li>
+                              <li class="scroll-to-section"><a href="login">Sign-In</a></li>
+                            {% else %}
+                              <li class="scroll-to-section"><a href="#">Welcome, {{ session.get('username') }}</a></li>
+                              <li class="scroll-to-section"><a href="upload">Upload</a></li>  
+                              <li class="scroll-to-section"><a href="logout">Logout</a></li>
+                            {% endif %}
+                            <li class="scroll-to-section"><a href="aboutus">About Us</a></li>
                             <li class="scroll-to-section"><div class="main-red-button-hover"><a href="#contact">Contact Us Now</a></div></li> 
-                        </ul>        
+                          </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>
@@ -389,35 +395,25 @@
             </div>
           </div>
         </div>
-        <div class="contact-dec">
+        <!-- <div class="contact-dec">
           <img src="static/images/contact-dec.png" alt="">
         </div>
         <div class="contact-left-dec">
           <img src="static/images/contact-left-dec.png" alt="">
         </div>
-      </div>
+      </div> -->
 
-    <footer>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3">
-              <div class="about footer-item">
-                <div class="logo">
-                  <img src="static/images/ChatGPT Image Apr 13, 2025, 03_15_04 PM.png" alt="LOCOTO">
-                </div>
-                <h4>info@Locoto.com</h4>
-                </div>
-            </div>
-            <div class="col-lg-12">
-              <div class="copyright">
-                <p>Copyright © 2025 LOCOTO | All Rights Reserved. 
-                <br>
-                Designed by <a rel="nofollow" href="https://templatemo.com" title="free CSS templates">Two Brothers</a></p>
-              </div>
-            </div>  
-          </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="copyright">
+            <p>Copyright © 2025 DIGIPODIUM | All Rights Reserved. 
+           </div>
         </div>
-      </footer>
+      </div>
+    </div>
+  </footer>
 
     <!-- Scripts -->
     <script src="static/vendor/jquery/jquery.min.js"></script>

@@ -249,12 +249,16 @@
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li class="scroll-to-section"><a href="/">Home</a></li>
-              <li class="scroll-to-section"><a href="register">Sign-Up</a></li>
-              <li class="scroll-to-section"><a href="login" class="active">Sign-In</a></li>
-              <li class="scroll-to-section"><a href="upload">Upload</a></li>  
-              <!-- <li class="scroll-to-section"><a href="feedback">Feedback</a></li> -->
+              {% if not session.get('logged_in') %}
+                <li class="scroll-to-section"><a href="register">Sign-Up</a></li>
+                <li class="scroll-to-section"><a href="login" class="active">Sign-In</a></li>
+              {% else %}
+                <li class="scroll-to-section"><a href="#">Welcome, {{ session.get('username') }}</a></li>
+                <li class="scroll-to-section"><a href="upload">Upload</a></li>  
+                <li class="scroll-to-section"><a href="logout">Logout</a></li>
+              {% endif %}
               <li class="scroll-to-section"><a href="aboutus">About Us</a></li>
-              <li class="scroll-to-section"><div class="main-red-button-hover"><a href="/#contact">Contact Us Now</a></div></li> 
+              <li class="scroll-to-section"><div class="main-red-button-hover"><a href="/#contact">Contact Us Now</a></div></li>
             </ul>        
             <a class='menu-trigger'>
                 <span>Menu</span>

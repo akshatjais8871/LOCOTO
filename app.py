@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from werkzeug.utils import secure_filename
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import bcrypt
@@ -26,7 +26,7 @@ handler = logging.FileHandler('app.log')
 handler.setLevel(logging.DEBUG)
 
 # Create a logging format
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+formatter = logging.Formatter('%(asctime)s - %(name)s - %levelname)s - %(message)s')
 handler.setFormatter(formatter)
 
 # Add the handler to the logger
@@ -71,9 +71,17 @@ def login():
         password = request.form['password']
         user = User.query.filter_by(username=username).first() or User.query.filter_by(email=username).first()
         if user and user.check_password(password):
-            return redirect(url_for('home'))
+            session['username'] = user.username
+            session['logged_in'] = True
+            return redirect(url_for('index'))
         return render_template('login.html', error='Invalid username or password')
     return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    session.pop('logged_in', None)
+    return redirect(url_for('index'))
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -81,7 +89,7 @@ def register():
         username = request.form['username']
         email = request.form['email']
         password = request.form['password']
-        conform_password = request.form['confirm-password']
+        conform_password = request.form['confirm_password']
         if password != conform_password:
             return render_template('register.html', error='Passwords do not match')
         try:
@@ -209,6 +217,8 @@ def text_to_speech(text, language):
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
+    if not session.get('logged_in'):
+        return redirect(url_for('login'))
     if request.method == 'POST':
         file = request.files['file']
         if file and file.filename != '':

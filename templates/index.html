@@ -189,11 +189,15 @@ https://templatemo.com/tm-565-onix-digital
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="register">Sign-Up</a></li>
-              <li class="scroll-to-section"><a href="login">Sign-In</a></li>
-              <li class="scroll-to-section"><a href="upload">Upload</a></li>  
-              <!-- <li class="scroll-to-section"><a href="feedback">Feedback</a></li> -->
+              <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
+              {% if not session.get('logged_in') %}
+                <li class="scroll-to-section"><a href="register">Sign-Up</a></li>
+                <li class="scroll-to-section"><a href="login">Sign-In</a></li>
+              {% else %}
+                <li class="scroll-to-section"><a href="#">Welcome, {{ session.get('username') }}</a></li>
+                <li class="scroll-to-section"><a href="upload">Upload</a></li>  
+                <li class="scroll-to-section"><a href="logout">Logout</a></li>
+              {% endif %}
               <li class="scroll-to-section"><a href="aboutus">About Us</a></li>
               <li class="scroll-to-section"><div class="main-red-button-hover"><a href="#contact">Contact Us Now</a></div></li> 
             </ul>        
@@ -216,7 +220,7 @@ https://templatemo.com/tm-565-onix-digital
             <div class="col-lg-6 align-self-center">
               <div class="owl-carousel owl-banner">
                 <div class="item header-text fade-in-up">
-                  <h1 class="float-animation">🌍 WELCOME TO LOCOTO</h1>
+                  <h1 class="float-animation">🌍 LOCOTO</h1>
                   <h6 class="pulse-animation"><em>– Language Without Barriers</em></h6>
                   <p>📸 Scan. Translate. Listen. Understand.</p>
                   <div class="down-buttons">
@@ -227,8 +231,8 @@ https://templatemo.com/tm-565-onix-digital
                     </div>
                   </div>
                 </div>
-                <div class="item header-text fade-in-up"> <!--ஒவ்வொரு மொழியின் குரல், ஒவ்வொரு இதயத்தின் வார்த்தைகள்.-->
-                  <div class="hindi-tagline"> हर भाषा की आवाज़, हर दिल की बात।</div>
+                <div class="item header-text fade-in-up"> 
+                  <div class="hindi-tagline"> ஒவ்வொரு மொழியின் குரல், ஒவ்வொரு இதயத்தின் வார்த்தைகள்.</div>
                   <div class="transliteration">🎵 Har bhasha ki awaaz, har dil ki baat.</div>
                   <div class="translation">💬 Voice of every language, words from every heart.</div>
                 </div>
@@ -387,29 +391,6 @@ https://templatemo.com/tm-565-onix-digital
       </div>
     </div>
   </div>
-
-  <!-- <div id="subscribe" class="subscribe">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="inner-content">
-            <div class="row">
-              <div class="col-lg-10 offset-lg-1">
-                <h2>Know Your Website SEO Score by Email</h2>
-                <form id="subscribe" action="" method="get">
-                  <input type="text" name="website" id="website" placeholder="Your Website URL" required="">
-                  <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
-                  <button type="submit" id="form-submit" class="main-button ">Subscribe</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-
   
   <div id="contact" class="contact-us section">
     <div class="container">
@@ -433,7 +414,7 @@ https://templatemo.com/tm-565-onix-digital
                   <input type="name" name="name" id="name" placeholder="Name" autocomplete="on" required>
                 </fieldset>
               </div>
-              <div class="col-lg-12">
+              <div the="col-lg-12">
                 <fieldset>
                   <input type="surname" name="surname" id="surname" placeholder="Surname" autocomplete="on" required>
                 </fieldset>
@@ -473,19 +454,9 @@ https://templatemo.com/tm-565-onix-digital
   <footer>
     <div class="container">
       <div class="row">
-        <div class="col-lg-3">
-          <div class="about footer-item">
-            <div class="logo">
-              <img src="static/images/ChatGPT Image Apr 13, 2025, 03_15_04 PM.png" alt="LOCOTO">
-            </div>
-            <h4>info@Locoto.com</h4>
-            </div>
-        </div>
         <div class="col-lg-12">
           <div class="copyright">
-            <p>Copyright © 2025 LOCOTO | All Rights Reserved. 
-            <br>
-            Designed by <a rel="nofollow" href="https://templatemo.com" title="free CSS templates">Two Brothers</a></p>
+            <p>Copyright © 2025 DIGIPODIUM | All Rights Reserved. 
           </div>
         </div>  
       </div>
