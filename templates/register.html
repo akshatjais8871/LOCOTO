@@ -237,9 +237,9 @@
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <ul class="nav">
-                <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
+                <li class="scroll-to-section"><a href="/" >Home</a></li>
                 {% if not session.get('logged_in') %}
-                  <li class="scroll-to-section"><a href="register">Sign-Up</a></li>
+                  <li class="scroll-to-section"><a href="register" class="active">Sign-Up</a></li>
                   <li class="scroll-to-section"><a href="login">Sign-In</a></li>
                 {% else %}
                   <li class="scroll-to-section"><a href="#">Welcome, {{ session.get('username') }}</a></li>

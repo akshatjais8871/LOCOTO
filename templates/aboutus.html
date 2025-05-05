@@ -30,7 +30,7 @@
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: var(--bg);
+            background-color: #fff;
             color: var(--text);
             scroll-behavior: smooth;
             line-height: 1.6;
@@ -263,8 +263,8 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <!-- <li class="scroll-to-section"><a href="/">Home</a></li> -->
-                            <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="/">Home</a></li>
+                            <!-- <li class="scroll-to-section"><a href="/" class="active">Home</a></li> -->
                             {% if not session.get('logged_in') %}
                               <li class="scroll-to-section"><a href="register">Sign-Up</a></li>
                               <li class="scroll-to-section"><a href="login">Sign-In</a></li>
@@ -273,7 +273,7 @@
                               <li class="scroll-to-section"><a href="upload">Upload</a></li>  
                               <li class="scroll-to-section"><a href="logout">Logout</a></li>
                             {% endif %}
-                            <li class="scroll-to-section"><a href="aboutus">About Us</a></li>
+                            <li class="scroll-to-section"><a href="aboutus"class="active">About Us</a></li>
                             <li class="scroll-to-section"><div class="main-red-button-hover"><a href="#contact">Contact Us Now</a></div></li> 
                           </ul>        
                         <a class='menu-trigger'>
@@ -400,7 +400,6 @@
                 </div>
               </form>
             </div>
-          </div>
         </div>
     </div>
 <div class="footer-dec">
