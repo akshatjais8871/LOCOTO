@@ -275,13 +275,13 @@
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="/">Home</a></li>
               {% if not session.get('logged_in') %}
                 <li class="scroll-to-section"><a href="register">Sign-Up</a></li>
                 <li class="scroll-to-section"><a href="login">Sign-In</a></li>
               {% else %}
                 <li class="scroll-to-section"><a href="#">Welcome {{ session.get('username') }}</a></li>
-                <li class="scroll-to-section"><a href="upload">Upload</a></li>  
+                <li class="scroll-to-section"><a href="upload" class="active">Upload</a></li>  
                 <li class="scroll-to-section"><a href="logout">Logout</a></li>
               {% endif %}
               <li class="scroll-to-section"><a href="aboutus">About Us</a></li>

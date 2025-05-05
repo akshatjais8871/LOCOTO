@@ -215,21 +215,28 @@
         }
 
         footer {
-        
-            color: white;
+            background-color: transparent;
             text-align: center;
-            padding: 30px 0;
-            margin-top: 60px;
+            /*padding: 30px 0;
+            margin-top: 60px;*/
+            position: relative;
+            z-index: 2;
         }
 
         footer p {
             margin: 0;
             font-size: 1em;
+            color: #1f2d3d;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
         }
     </style>
 </head>
 
-<body>
+<>
     <!-- ***** Preloader Start ***** -->
     <div id="js-preloader" class="js-preloader">
         <div class="preloader-inner">
@@ -395,25 +402,22 @@
             </div>
           </div>
         </div>
-        <!-- <div class="contact-dec">
-          <img src="static/images/contact-dec.png" alt="">
-        </div>
-        <div class="contact-left-dec">
-          <img src="static/images/contact-left-dec.png" alt="">
-        </div>
-      </div> -->
+    </div>
+<div class="footer-dec">
+    <img src="static/images/footer-dec.png" alt="">
+</div>
 
-  <footer>
+<footer>
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="copyright">
-            <p>Copyright © 2025 DIGIPODIUM | All Rights Reserved. 
-           </div>
-        </div>
+            <p>Copyright © 2025 DIGIPODIUM | All Rights Reserved.</p>
+          </div>
+        </div>  
       </div>
     </div>
-  </footer>
+</footer>
 
     <!-- Scripts -->
     <script src="static/vendor/jquery/jquery.min.js"></script>
