@@ -282,6 +282,9 @@
               {% else %}
                 <li class="scroll-to-section"><a href="#">Welcome {{ session.get('username') }}</a></li>
                 <li class="scroll-to-section"><a href="upload" class="active">Upload</a></li>  
+                {% if session.get('is_admin') %}
+                <li class="scroll-to-section"><a href="admin/users">Admin Panel</a></li>
+                {% endif %}
                 <li class="scroll-to-section"><a href="logout">Logout</a></li>
               {% endif %}
               <li class="scroll-to-section"><a href="aboutus">About Us</a></li>
