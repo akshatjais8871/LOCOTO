@@ -19,6 +19,8 @@ import logging
 import base64
 from datetime import datetime
 from functools import wraps
+from flask.cli import with_appcontext
+import click
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -79,9 +81,6 @@ def login():
         password = request.form['password']
         user = User.query.filter_by(username=username).first() or User.query.filter_by(email=username).first()
         if user and user.check_password(password):
-            if not user.is_active:
-                flash('Your account has been deactivated. Please contact an administrator.')
-                return render_template('login.html')
             session['username'] = user.username
             session['logged_in'] = True
             session['is_admin'] = user.is_admin
@@ -95,6 +94,7 @@ def login():
 def logout():
     session.pop('username', None)
     session.pop('logged_in', None)
+    session.pop('is_admin', None)
     return redirect(url_for('index'))
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -370,6 +370,19 @@ def delete_user(user_id):
         db.session.commit()
     return redirect(url_for('admin_users'))
 
+@app.cli.command("create-admin")
+@click.argument("username")
+@with_appcontext
+def create_admin(username):
+    """Promote a user to admin status."""
+    user = User.query.filter_by(username=username).first()
+    if user:
+        user.is_admin = True
+        db.session.commit()
+        click.echo(f"User {username} has been promoted to admin.")
+    else:
+        click.echo(f"User {username} not found.")
+
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=False)
 
