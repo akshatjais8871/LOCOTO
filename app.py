@@ -16,6 +16,8 @@ import tempfile
 from flask_cors import CORS
 import logging
 import base64
+from datetime import datetime
+from functools import wraps
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -45,11 +47,16 @@ class User(db.Model):
     username = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(50), nullable=False)
     password = db.Column(db.String(50), nullable=False)
+    is_admin = db.Column(db.Boolean, default=False)
+    is_active = db.Column(db.Boolean, default=True)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    last_login = db.Column(db.DateTime)
 
-    def __init__(self, username, email, password):
+    def __init__(self, username, email, password, is_admin=False):
         self.username = username
         self.email = email
         self.password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+        self.is_admin = is_admin
 
     def __repr__(self):
         return f"User('{self.username}', '{self.email}')"
@@ -71,8 +78,14 @@ def login():
         password = request.form['password']
         user = User.query.filter_by(username=username).first() or User.query.filter_by(email=username).first()
         if user and user.check_password(password):
+            if not user.is_active:
+                flash('Your account has been deactivated. Please contact an administrator.')
+                return render_template('login.html')
             session['username'] = user.username
             session['logged_in'] = True
+            session['is_admin'] = user.is_admin
+            user.last_login = datetime.utcnow()
+            db.session.commit()
             return redirect(url_for('index'))
         return render_template('login.html', error='Invalid username or password')
     return render_template('login.html')
@@ -317,6 +330,44 @@ def download_audio():
 @app.route('/results')
 def results():
     return render_template('result.html')
+
+# Admin middleware
+def admin_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not session.get('logged_in'):
+            return redirect(url_for('login'))
+        username = session.get('username')
+        user = User.query.filter_by(username=username).first()
+        if not user or not user.is_admin:
+            flash('Admin access required')
+            return redirect(url_for('index'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+@app.route('/admin/users')
+@admin_required
+def admin_users():
+    users = User.query.all()
+    return render_template('admin/users.html', users=users)
+
+@app.route('/admin/users/<int:user_id>/toggle_status', methods=['POST'])
+@admin_required
+def toggle_user_status(user_id):
+    user = User.query.get_or_404(user_id)
+    if user.username != session.get('username'):  # Prevent admin from deactivating themselves
+        user.is_active = not user.is_active
+        db.session.commit()
+    return redirect(url_for('admin_users'))
+
+@app.route('/admin/users/<int:user_id>/delete', methods=['POST'])
+@admin_required
+def delete_user(user_id):
+    user = User.query.get_or_404(user_id)
+    if user.username != session.get('username'):  # Prevent admin from deleting themselves
+        db.session.delete(user)
+        db.session.commit()
+    return redirect(url_for('admin_users'))
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True)
