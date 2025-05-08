@@ -243,6 +243,124 @@
       cursor: not-allowed;
       transform: none;
     }
+
+    /* Translation Results Styles */
+    .result-container {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+
+    .detected-language {
+      margin-top: 15px;
+    }
+
+    .detected-language .badge {
+      font-size: 1rem;
+      padding: 8px 16px;
+      background-color: #726ae3;
+    }
+
+    .translation-card, .audio-card {
+      background-color: #f8f9fa;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-header {
+      background-color: #726ae3;
+      color: white;
+      padding: 15px 20px;
+    }
+
+    .card-header h4 {
+      margin: 0;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-body {
+      padding: 25px;
+    }
+
+    .translation-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: white;
+      border-radius: 8px;
+      border: 1px solid #eee;
+      min-height: 100px;
+    }
+
+    .copy-btn, .download-btn {
+      background-color: #726ae3;
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .copy-btn:hover, .download-btn:hover {
+      background-color: #5d56d1;
+      transform: translateY(-2px);
+      color: white;
+    }
+
+    .custom-audio-player {
+      width: 100%;
+      max-width: 500px;
+      height: 40px;
+      margin: 0 auto;
+    }
+
+    .audio-controls {
+      margin-top: 20px;
+    }
+
+    /* Audio player custom styling */
+    audio::-webkit-media-controls-panel {
+      background-color: #f8f9fa;
+    }
+
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-volume-slider,
+    audio::-webkit-media-controls-mute-button {
+      filter: hue-rotate(220deg);
+    }
+
+    @media (max-width: 768px) {
+      .result-container {
+        padding: 20px;
+      }
+
+      .card-header h4 {
+        font-size: 1rem;
+      }
+
+      .translation-text {
+        font-size: 1rem;
+        padding: 10px;
+      }
+
+      .custom-audio-player {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
@@ -415,6 +533,57 @@
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Translation Results Section -->
+  <div id="resultSection" class="section" style="display: none;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <div class="result-container wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+            <div class="section-heading text-center mb-5">
+              <h2>Translation <em>Results</em></h2>
+              <div class="detected-language">
+                <span class="badge bg-primary">Detected Language: <span id="detectedLanguage">-</span></span>
+              </div>
+            </div>
+            
+            <!-- Translation Text Card -->
+            <div class="translation-card">
+              <div class="card-header">
+                <h4><i class="fa fa-language"></i> Translated Text</h4>
+              </div>
+              <div class="card-body">
+                <div class="translation-text" id="translatedText">
+                  <!-- Translation will be inserted here -->
+                </div>
+                <button class="copy-btn" onclick="copyTranslation()">
+                  <i class="fa fa-copy"></i> Copy Text
+                </button>
+              </div>
+            </div>
+
+            <!-- Audio Player Card -->
+            <div class="audio-card mt-4">
+              <div class="card-header">
+                <h4><i class="fa fa-volume-up"></i> Text-to-Speech</h4>
+              </div>
+              <div class="card-body text-center">
+                <audio id="audioPlayer" controls class="custom-audio-player">
+                  <source id="audioSource" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+                <div class="audio-controls mt-3">
+                  <a id="downloadButton" class="download-btn" download>
+                    <i class="fa fa-download"></i> Download Audio
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -843,6 +1012,76 @@
       }
     });
 
+    // Copy translation text function
+    function copyTranslation() {
+      const translationText = document.getElementById('translatedText').textContent;
+      navigator.clipboard.writeText(translationText).then(() => {
+        const copyBtn = document.querySelector('.copy-btn');
+        const originalText = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<i class="fa fa-check"></i> Copied!';
+        setTimeout(() => {
+          copyBtn.innerHTML = originalText;
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy text: ', err);
+        alert('Failed to copy text. Please try again.');
+      });
+    }
+
+    // Update form submission handler
+    document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      
+      // Show loading
+      document.getElementById('translateButton').disabled = true;
+      document.getElementById('loadingContainer').style.display = 'block';
+      document.getElementById('resultSection').style.display = 'none';
+
+      try {
+        const response = await fetch('/process', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await response.json();
+        
+        if (data.error) {
+          alert(data.error);
+        } else {
+          // Update results section
+          document.getElementById('detectedLanguage').textContent = data.detected_language || 'Unknown';
+          document.getElementById('translatedText').textContent = data.translated_text || 'No translation available';
+          
+          // Update audio player if audio is available
+          const audioPlayer = document.getElementById('audioPlayer');
+          const audioSource = document.getElementById('audioSource');
+          const downloadButton = document.getElementById('downloadButton');
+          
+          if (data.audio_path) {
+            audioSource.src = data.audio_path + '?t=' + new Date().getTime();
+            audioPlayer.load();
+            downloadButton.href = data.audio_path;
+            downloadButton.style.display = 'inline-flex';
+          } else {
+            audioPlayer.style.display = 'none';
+            downloadButton.style.display = 'none';
+          }
+
+          // Show results section
+          document.getElementById('resultSection').style.display = 'block';
+          
+          // Scroll to results
+          document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while processing the image');
+      } finally {
+        // Reset loading state
+        document.getElementById('translateButton').disabled = false;
+        document.getElementById('loadingContainer').style.display = 'none';
+      }
+    });
   </script>
 </body>
 
