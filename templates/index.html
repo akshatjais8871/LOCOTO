@@ -1,166 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- PWA Support -->
-    <link rel="manifest" href="/static/manifest.json">
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="LOCOTO">
-    <link rel="apple-touch-icon" href="/static/images/logo.png">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- PWA Support -->
+  <link rel="manifest" href="/static/manifest.json">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="LOCOTO">
+  <link rel="apple-touch-icon" href="/static/images/logo.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-    <title>LOCOTO</title>
+  <title>LOCOTO</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="static/css/fontawesome.css">
-    <link rel="stylesheet" href="static/css/templatemo-onix-digital.css">
-    <link rel="stylesheet" href="static/css/animated.css">
-    <link rel="stylesheet" href="static/css/owl.css">
-    <style>
-      /* Custom Animations */
-      @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-        100% { transform: translateY(0px); }
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="static/css/fontawesome.css">
+  <link rel="stylesheet" href="static/css/templatemo-onix-digital.css">
+  <link rel="stylesheet" href="static/css/animated.css">
+  <link rel="stylesheet" href="static/css/owl.css">
+  <style>
+    /* Custom Animations */
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
       }
 
-      @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
+      50% {
+        transform: translateY(-20px);
       }
 
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
       }
 
-      /* Translucent Effects */
-      .translucent-card {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border-radius: 15px;
-        padding: 20px;
-        margin: 10px;
-        transition: all 0.3s ease;
-      }
-
-      .translucent-card:hover {
-        background: rgba(255, 255, 255, 0.15);
-        transform: translateY(-5px);
-      }
-
-      /* Animation Classes */
-      .float-animation {
-        animation: float 6s ease-in-out infinite;
-      }
-
-      .pulse-animation {
-        animation: pulse 2s ease-in-out infinite;
-      }
-
-      .fade-in-up {
-        animation: fadeInUp 1s ease-out forwards;
-      }
-
-      /* Enhanced Header Text */
-      .header-text h1, .header-text h6 {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Service Cards Enhancement */
-      .item {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border-radius: 15px;
-        padding: 20px;
-        transition: all 0.3s ease;
-      }
-
-      .item:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      }
-
-      /* Contact Form Enhancement */
-      .contact-us form {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border-radius: 15px;
-        padding: 30px;
-      }
-
-      /* Portfolio Items Enhancement */
-      .thumb {
-        overflow: hidden;
-        border-radius: 15px;
-        transition: all 0.3s ease;
-      }
-
-      .thumb:hover {
+      50% {
         transform: scale(1.05);
       }
 
-      .thumb img {
-        transition: all 0.3s ease;
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
 
-      .thumb:hover img {
-        transform: scale(1.1);
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
 
-      /* Hindi Taglines Styles */
-      .hindi-tagline {
-          font-size: 2.4rem;
-          font-weight: 700;
-          color: #2c3e50;
-          margin-bottom: 20px;
-          line-height: 1.4;
-          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-      }
+    /* Translucent Effects */
+    .translucent-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 10px;
+      transition: all 0.3s ease;
+    }
 
-      .transliteration {
-          font-size: 1.4rem;
-          color: #666;
-          margin-bottom: 15px;
-          font-style: italic;
-          background: rgba(255, 255, 255, 0.1);
-          padding: 10px 20px;
-          border-radius: 25px;
-          display: inline-block;
-      }
+    .translucent-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-5px);
+    }
 
-      .translation {
-          font-size: 1.5rem;
-          color: #4a90e2;
-          font-weight: 600;
-          background: rgba(74, 144, 226, 0.1);
-          padding: 15px 25px;
-          border-radius: 30px;
-          display: inline-block;
-          box-shadow: 0 4px 15px rgba(74, 144, 226, 0.2);
-      }
-    </style>
-  </head>
-<!--TemplateMo 565 Onix Digital https://templatemo.com/tm-565-onix-digital-->  
+    /* Animation Classes */
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .pulse-animation {
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    /* Enhanced Header Text */
+    .header-text h1,
+    .header-text h6 {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Service Cards Enhancement */
+    .item {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Contact Form Enhancement */
+    .contact-us form {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 30px;
+    }
+
+    /* Portfolio Items Enhancement */
+    .thumb {
+      overflow: hidden;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .thumb:hover {
+      transform: scale(1.05);
+    }
+
+    .thumb img {
+      transition: all 0.3s ease;
+    }
+
+    .thumb:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Hindi Taglines Styles */
+    .hindi-tagline {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      line-height: 1.4;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .transliteration {
+      font-size: 1.4rem;
+      color: #666;
+      margin-bottom: 15px;
+      font-style: italic;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 25px;
+      display: inline-block;
+    }
+
+    .translation {
+      font-size: 1.5rem;
+      color: #4a90e2;
+      font-weight: 600;
+      background: rgba(74, 144, 226, 0.1);
+      padding: 15px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(74, 144, 226, 0.2);
+    }
+  </style>
+</head>
+<!--TemplateMo 565 Onix Digital https://templatemo.com/tm-565-onix-digital-->
 
 <body>
 
@@ -185,28 +204,31 @@
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
             <div class="logo">
-              <img src="/static/images/ChatGPT Image Apr 13, 2025, 03_15_04 PM.png" alt="LOCOTO" width="150" height="150">
+              <img src="/static/images/ChatGPT Image Apr 13, 2025, 03_15_04 PM.png" alt="LOCOTO" width="150"
+                height="150">
             </div>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
               {% if not session.get('logged_in') %}
-                <li class="scroll-to-section"><a href="register">Sign-Up</a></li>
-                <li class="scroll-to-section"><a href="login">Sign-In</a></li>
+              <li class="scroll-to-section"><a href="register">Sign-Up</a></li>
+              <li class="scroll-to-section"><a href="login">Sign-In</a></li>
               {% else %}
-                <li class="scroll-to-section"><a href="#">Welcome {{ session.get('username') }}</a></li>
-                <li class="scroll-to-section"><a href="upload">Upload</a></li>  
-                {% if session.get('is_admin') %}
-                <li class="scroll-to-section"><a href="admin/users">Admin Panel</a></li>
-                {% endif %}
-                <li class="scroll-to-section"><a href="logout">Logout</a></li>
+              <li class="scroll-to-section"><a href="#">Welcome {{ session.get('username') }}</a></li>
+              <li class="scroll-to-section"><a href="upload">Upload</a></li>
+              {% if session.get('is_admin') %}
+              <li class="scroll-to-section"><a href="admin/users">Admin Panel</a></li>
+              {% endif %}
+              <li class="scroll-to-section"><a href="logout">Logout</a></li>
               {% endif %}
               <li class="scroll-to-section"><a href="aboutus">About Us</a></li>
-              <li class="scroll-to-section"><div class="main-red-button-hover"><a href="#contact">Contact Us Now</a></div></li> 
-            </ul>        
+              <li class="scroll-to-section">
+                <div class="main-red-button-hover"><a href="#contact">Contact Us Now</a></div>
+              </li>
+            </ul>
             <a class='menu-trigger'>
-                <span>Menu</span>
+              <span>Menu</span>
             </a>
             <!-- ***** Menu End ***** -->
           </nav>
@@ -235,7 +257,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="item header-text fade-in-up"> 
+                <div class="item header-text fade-in-up">
                   <div class="hindi-tagline"> ஒவ்வொரு மொழியின் குரல், ஒவ்வொரு இதயத்தின் வார்த்தைகள்.</div>
                   <div class="transliteration">🎵 Har bhasha ki awaaz, har dil ki baat.</div>
                   <div class="translation">💬 Voice of every language, words from every heart.</div>
@@ -333,65 +355,36 @@
           <div class="owl-carousel owl-portfolio">
             <div class="item">
               <div class="thumb">
-                <img src="static/images/TOI.jpg" alt="" >
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a rel="sponsored" href="https://templatemo.com/tm-564-plot-listing" target="_parent"><h4>2025 Research</h4></a>
-                    <span>Understanding Different languages</span>
-                  </div>
-                </div>
+                <img src="static/images/TOI.jpg" alt="">
+
               </div>
             </div>
             <div class="item">
               <div class="thumb">
                 <img src="static/images/994a405a-7132-4ae5-9cef-e07f22f50219.jpeg" alt="">
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a rel="sponsored" href="https://templatemo.com/tm-564-plot-listing" target="_parent"><h4></h4></a>
-                    <span>Understanding Different languages</span>
-                  </div>
-                </div>
+
               </div>
             </div>
             <div class="item">
               <div class="thumb">
                 <img src="static/images/TOI2.jpg" alt="">
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#"><h4></h4></a>
-                    <span>TIMES OF INDIA</span>
-                  </div>
-                </div>
+
               </div>
             </div>
             <div class="item">
               <div class="thumb">
                 <img src="static/images/c720e082-8237-4104-bde3-89062dac43de.jpeg" alt="">
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a rel="sponsored" href="https://templatemo.com/tm-562-space-dynamic" target="_parent"><h4>Third Image</h4></a>
-                    <span>Dominous Menu in Italy</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="static/15a8a78d-60e1-45bc-9605-0fa0cc4a55aa.jpeg" alt="">
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#"><h4</h4></a>
-                    <span>Text Written in Tamil</span>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
+          
         </div>
       </div>
     </div>
   </div>
-  
+  </div>
+
   <div id="contact" class="contact-us section">
     <div class="container">
       <div class="row">
@@ -399,7 +392,10 @@
           <div class="section-heading fade-in-up">
             <h2>Feel free to <em>Contact</em> us via the <span>form</span></h2>
             <div id="map" class="translucent-card">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1779.8398194660651!2d80.94023014633468!3d26.85013998728267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd1ca1b7057f%3A0x8932f633116edfbc!2sHazratganj%20Metro%20Station!5e0!3m2!1sen!2sin!4v1744560566391!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1779.8398194660651!2d80.94023014633468!3d26.85013998728267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd1ca1b7057f%3A0x8932f633116edfbc!2sHazratganj%20Metro%20Station!5e0!3m2!1sen!2sin!4v1744560566391!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="info translucent-card">
               <span><i class="fa fa-envelope"></i> <a href="#">info@Locoto.com<br>mail@Locoto.com</a></span>
@@ -421,7 +417,8 @@
               </div>
               <div class="col-lg-12">
                 <fieldset>
-                  <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
+                  <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email"
+                    required="">
                 </fieldset>
               </div>
               <div class="col-lg-12">
@@ -456,9 +453,9 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="copyright">
-            <p>Copyright © 2025 DIGIPODIUM | All Rights Reserved. 
+            <p>Copyright © 2025 DIGIPODIUM | All Rights Reserved.
           </div>
-        </div>  
+        </div>
       </div>
     </div>
   </footer>
@@ -473,36 +470,37 @@
   <script src="static/js/custom.js"></script>
 
   <script>
-  // Acc
-    $(document).on("click", ".naccs .menu div", function() {
+    // Acc
+    $(document).on("click", ".naccs .menu div", function () {
       var numberIndex = $(this).index();
 
       if (!$(this).is("active")) {
-          $(".naccs .menu div").removeClass("active");
-          $(".naccs ul li").removeClass("active");
+        $(".naccs .menu div").removeClass("active");
+        $(".naccs ul li").removeClass("active");
 
-          $(this).addClass("active");
-          $(".naccs ul").find("li:eq(" + numberIndex + ")").addClass("active");
+        $(this).addClass("active");
+        $(".naccs ul").find("li:eq(" + numberIndex + ")").addClass("active");
 
-          var listItemHeight = $(".naccs ul")
-            .find("li:eq(" + numberIndex + ")")
-            .innerHeight();
-          $(".naccs ul").height(listItemHeight + "px");
-        }
+        var listItemHeight = $(".naccs ul")
+          .find("li:eq(" + numberIndex + ")")
+          .innerHeight();
+        $(".naccs ul").height(listItemHeight + "px");
+      }
     });
 
-  // Register Service Worker for PWA support
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/static/sw.js')
-        .then(registration => {
-          console.log('ServiceWorker registration successful');
-        })
-        .catch(err => {
-          console.log('ServiceWorker registration failed: ', err);
-        });
-    });
-  }
+    // Register Service Worker for PWA support
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/static/sw.js')
+          .then(registration => {
+            console.log('ServiceWorker registration successful');
+          })
+          .catch(err => {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+      });
+    }
   </script>
 </body>
+
 </html>
