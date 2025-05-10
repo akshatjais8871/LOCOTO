@@ -121,13 +121,6 @@ def register():
 def aboutus():
     return render_template('aboutus.html')
 
-# @app.route('/feedback')
-# def feedback():
-#     return render_template('feedback.html')
-
-# @app.route('/contactus')
-# def contactus():
-#     return render_template('contactus.html')
 
 #FOR UPLOAADING
 
