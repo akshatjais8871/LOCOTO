@@ -3,6 +3,9 @@ from werkzeug.utils import secure_filename
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import bcrypt
 import logging
+from flask_mail import Mail, Message
+from itsdangerous import URLSafeTimedSerializer
+import os
 
 from flask import Flask, render_template, request, jsonify, send_file
 import os
@@ -16,6 +19,14 @@ import tempfile
 from flask_cors import CORS
 import logging
 import base64
+from datetime import datetime
+from functools import wraps
+from flask.cli import with_appcontext
+import click
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -40,16 +51,30 @@ app.config['SECRET_KEY'] = 'secret'
 
 db = SQLAlchemy(app)
 
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.environ.get('EMAIL_USER', 'your-email@gmail.com')
+app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASSWORD', 'your-app-password')
+
+mail = Mail(app)
+serializer = URLSafeTimedSerializer(app.config['SECRET_KEY'])
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(50), nullable=False)
     password = db.Column(db.String(50), nullable=False)
+    is_admin = db.Column(db.Boolean, default=False)
+    is_active = db.Column(db.Boolean, default=True)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    last_login = db.Column(db.DateTime)
 
-    def __init__(self, username, email, password):
+    def __init__(self, username, email, password, is_admin=False):
         self.username = username
         self.email = email
         self.password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+        self.is_admin = is_admin
 
     def __repr__(self):
         return f"User('{self.username}', '{self.email}')"
@@ -73,6 +98,9 @@ def login():
         if user and user.check_password(password):
             session['username'] = user.username
             session['logged_in'] = True
+            session['is_admin'] = user.is_admin
+            user.last_login = datetime.utcnow()
+            db.session.commit()
             return redirect(url_for('index'))
         return render_template('login.html', error='Invalid username or password')
     return render_template('login.html')
@@ -81,6 +109,7 @@ def login():
 def logout():
     session.pop('username', None)
     session.pop('logged_in', None)
+    session.pop('is_admin', None)
     return redirect(url_for('index'))
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -107,13 +136,6 @@ def register():
 def aboutus():
     return render_template('aboutus.html')
 
-# @app.route('/feedback')
-# def feedback():
-#     return render_template('feedback.html')
-
-# @app.route('/contactus')
-# def contactus():
-#     return render_template('contactus.html')
 
 #FOR UPLOAADING
 
@@ -317,6 +339,120 @@ def download_audio():
 @app.route('/results')
 def results():
     return render_template('result.html')
+
+# Admin middleware
+def admin_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not session.get('logged_in'):
+            return redirect(url_for('login'))
+        username = session.get('username')
+        user = User.query.filter_by(username=username).first()
+        if not user or not user.is_admin:
+            flash('Admin access required')
+            return redirect(url_for('index'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+@app.route('/admin/users')
+@admin_required
+def admin_users():
+    users = User.query.all()
+    return render_template('admin/users.html', users=users)
+
+@app.route('/admin/users/<int:user_id>/toggle_status', methods=['POST'])
+@admin_required
+def toggle_user_status(user_id):
+    user = User.query.get_or_404(user_id)
+    if user.username != session.get('username'):  # Prevent admin from deactivating themselves
+        user.is_active = not user.is_active
+        db.session.commit()
+    return redirect(url_for('admin_users'))
+
+@app.route('/admin/users/<int:user_id>/delete', methods=['POST'])
+@admin_required
+def delete_user(user_id):
+    user = User.query.get_or_404(user_id)
+    if user.username != session.get('username'):  # Prevent admin from deleting themselves
+        db.session.delete(user)
+        db.session.commit()
+    return redirect(url_for('admin_users'))
+
+@app.route('/forgot-password', methods=['GET', 'POST'])
+def forgot_password():
+    if request.method == 'POST':
+        email = request.form['email']
+        user = User.query.filter_by(email=email).first()
+        
+        if user:
+            # Generate a secure token
+            token = serializer.dumps(user.email, salt='password-reset-salt')
+            
+            # Create password reset link
+            reset_url = url_for('reset_password', token=token, _external=True)
+            
+            # Send email
+            msg = Message('Password Reset Request',
+                        sender=app.config['MAIL_USERNAME'],
+                        recipients=[user.email])
+            msg.body = f'''To reset your password, visit the following link:
+{reset_url}
+
+If you did not make this request, simply ignore this email and no changes will be made.
+'''
+            try:
+                mail.send(msg)
+                flash('An email has been sent with instructions to reset your password.', 'info')
+            except Exception as e:
+                logger.error(f"Error sending email: {str(e)}")
+                flash('Error sending email. Please try again later.', 'error')
+        else:
+            # Don't reveal whether a user exists
+            flash('If an account exists with that email, a password reset link will be sent.', 'info')
+            
+        return redirect(url_for('forgot_password'))
+    
+    return render_template('forgot_password.html')
+
+@app.route('/reset-password/<token>', methods=['GET', 'POST'])
+def reset_password(token):
+    try:
+        email = serializer.loads(token, salt='password-reset-salt', max_age=3600)  # Token expires in 1 hour
+    except:
+        flash('The password reset link is invalid or has expired.', 'error')
+        return redirect(url_for('login'))
+    
+    user = User.query.filter_by(email=email).first()
+    
+    if request.method == 'POST':
+        password = request.form['password']
+        confirm_password = request.form['confirm_password']
+        
+        if password != confirm_password:
+            flash('Passwords do not match.', 'error')
+            return render_template('reset_password.html')
+        
+        # Update password
+        user.password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+        db.session.commit()
+        
+        flash('Your password has been updated! You can now log in with your new password.', 'success')
+        return redirect(url_for('login'))
+    
+    return render_template('reset_password.html')
+
+@app.cli.command("create-admin")
+@click.argument("username")
+@with_appcontext
+def create_admin(username):
+    """Promote a user to admin status."""
+    user = User.query.filter_by(username=username).first()
+    if user:
+        user.is_admin = True
+        db.session.commit()
+        click.echo(f"User {username} has been promoted to admin.")
+    else:
+        click.echo(f"User {username} not found.")
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True)
