@@ -45,11 +45,18 @@ handler.setFormatter(formatter)
 # Add the handler to the logger
 logger.addHandler(handler)
 
-app = Flask(__name__, template_folder='../templates', static_folder='../static')
+app = Flask(__name__)
 CORS(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-app.config['SECRET_KEY'] = 'secret'
+# Set template and static folders relative to the api directory
+import pathlib
+BASE_DIR = pathlib.Path(__file__).resolve().parent.parent
+app.template_folder = str(BASE_DIR / 'templates')
+app.static_folder = str(BASE_DIR / 'static')
+
+# For Vercel, use in-memory SQLite database
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'secret')
 
 db = SQLAlchemy(app)
 
@@ -558,9 +565,6 @@ def test_email():
         logger.error(f"Test email error: {str(e)}")
         return f'Error sending email: {str(e)}'
     
-def handler(request, *args, **kwargs):
-    return app(request.environ, start_response=kwargs.get("start_response"))
-
-if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000, debug=False)
+app = Flask(__name__, template_folder='../templates', static_folder='../static')
+CORS(app)
 
