@@ -26,7 +26,6 @@ from functools import wraps
 from flask.cli import with_appcontext
 import click
 from dotenv import load_dotenv
-import vercel_wsgi
 
 # Load environment variables from .env file
 load_dotenv()
@@ -559,8 +558,9 @@ def test_email():
         logger.error(f"Test email error: {str(e)}")
         return f'Error sending email: {str(e)}'
     
-handler = vercel_wsgi.handle(app)
+def handler(request, *args, **kwargs):
+    return app(request.environ, start_response=kwargs.get("start_response"))
 
-if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000, debug=False)
+# if __name__ == '__main__':
+#     app.run(host="0.0.0.0", port=5000, debug=False)
 
