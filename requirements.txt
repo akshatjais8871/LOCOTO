@@ -11,5 +11,4 @@ gtts
 langdetect
 deep-translator
 flask-cors
-base64
 dotenv
