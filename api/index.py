@@ -35,7 +35,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
 # Create a file handler
-handler = logging.FileHandler('app.log')
+handler = logging.StreamHandler()
 handler.setLevel(logging.DEBUG)
 
 # Create a logging format
@@ -561,6 +561,6 @@ def test_email():
 def handler(request, *args, **kwargs):
     return app(request.environ, start_response=kwargs.get("start_response"))
 
-# if __name__ == '__main__':
-#     app.run(host="0.0.0.0", port=5000, debug=False)
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=5000, debug=False)
 
