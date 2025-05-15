@@ -1,0 +1,15 @@
+flask
+flask-sqlalchemy
+flask-bcrypt
+werkzeug
+flask-mail
+itsdangerous
+datetime
+google-generativeai
+pillow
+gtts
+langdetect
+deep-translator
+flask-cors
+base64
+dotenv

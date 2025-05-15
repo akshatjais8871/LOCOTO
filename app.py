@@ -6,7 +6,9 @@ import logging
 from flask_mail import Mail, Message
 from itsdangerous import URLSafeTimedSerializer
 import os
-
+import random
+from datetime import datetime, timedelta
+import datetime as dt
 from flask import Flask, render_template, request, jsonify, send_file
 import os
 import google.generativeai as genai
@@ -37,7 +39,7 @@ handler = logging.FileHandler('app.log')
 handler.setLevel(logging.DEBUG)
 
 # Create a logging format
-formatter = logging.Formatter('%(asctime)s - %(name)s - %levelname)s - %(message)s')
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
 
 # Add the handler to the logger
@@ -51,12 +53,23 @@ app.config['SECRET_KEY'] = 'secret'
 
 db = SQLAlchemy(app)
 
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = os.environ.get('EMAIL_USER', 'your-email@gmail.com')
-app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASSWORD', 'your-app-password')
+# Email configuration
+app.config.update(
+    MAIL_SERVER='smtp.gmail.com',
+    MAIL_PORT=465,
+    MAIL_USE_TLS=False,
+    MAIL_USE_SSL=True,
+    MAIL_USERNAME=os.getenv('EMAIL_USER'),
+    MAIL_PASSWORD=os.getenv('EMAIL_PASSWORD'),
+    # MAIL_DEFAULT_SENDER=os.environ.get('EMAIL_USER'),
+    MAIL_MAX_EMAILS=None,
+    MAIL_ASCII_ATTACHMENTS=False
+)
 
+if not app.config['MAIL_USERNAME'] or not app.config['MAIL_PASSWORD']:
+    logger.warning('Email credentials not set. Please set EMAIL_USER and EMAIL_PASSWORD environment variables.')
+    
+# Initialize Flask-Mail after configuration
 mail = Mail(app)
 serializer = URLSafeTimedSerializer(app.config['SECRET_KEY'])
 
@@ -69,6 +82,8 @@ class User(db.Model):
     is_active = db.Column(db.Boolean, default=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     last_login = db.Column(db.DateTime)
+    reset_otp = db.Column(db.String(6), nullable=True)
+    otp_created_at = db.Column(db.DateTime, nullable=True)
 
     def __init__(self, username, email, password, is_admin=False):
         self.username = username
@@ -378,6 +393,10 @@ def delete_user(user_id):
         db.session.commit()
     return redirect(url_for('admin_users'))
 
+def generate_otp():
+    """Generate a 6-digit OTP"""
+    return ''.join(random.choices('0123456789', k=6))
+
 @app.route('/forgot-password', methods=['GET', 'POST'])
 def forgot_password():
     if request.method == 'POST':
@@ -385,45 +404,99 @@ def forgot_password():
         user = User.query.filter_by(email=email).first()
         
         if user:
-            # Generate a secure token
-            token = serializer.dumps(user.email, salt='password-reset-salt')
+            # Generate OTP
+            otp = generate_otp()
+            print(f"Generated OTP: {otp}")  # For debugging purposes
+            user.reset_otp = otp
+            user.otp_created_at = datetime.now(dt.UTC)
+            db.session.commit()
             
-            # Create password reset link
-            reset_url = url_for('reset_password', token=token, _external=True)
+            # Store email in session for verification
+            session['reset_email'] = email
             
-            # Send email
-            msg = Message('Password Reset Request',
-                        sender=app.config['MAIL_USERNAME'],
-                        recipients=[user.email])
-            msg.body = f'''To reset your password, visit the following link:
-{reset_url}
-
-If you did not make this request, simply ignore this email and no changes will be made.
-'''
+            print("Sending OTP email...")
             try:
+                # Send OTP via email
+                msg = Message('LOCOTO - Password Reset OTP',
+                            sender=app.config['MAIL_USERNAME'],
+                            recipients=[email])
+                msg.body = f'''Your OTP for password reset is: {otp}
+
+This OTP will expire in 10 minutes.
+
+If you did not request this password reset, please ignore this email.
+
+Best regards,
+LOCOTO Team'''
+                
+                # Log email attempt
+                logger.info(f"Attempting to send OTP email to: {email}")
                 mail.send(msg)
-                flash('An email has been sent with instructions to reset your password.', 'info')
+                flash('An OTP has been sent to your email address.', 'info')
+                logger.info(f"Successfully sent OTP email to: {email}")
+                return redirect(url_for('verify_otp'))
             except Exception as e:
                 logger.error(f"Error sending email: {str(e)}")
-                flash('Error sending email. Please try again later.', 'error')
+                # Rollback the OTP changes since email failed
+                user.reset_otp = None
+                user.otp_created_at = None
+                db.session.commit()
+                # Log full error details
+                logger.error(f"Detailed email error: {str(e)}")
+                flash('Error sending OTP email. Please try again later.', 'error')
+                return redirect(url_for('forgot_password'))
         else:
-            # Don't reveal whether a user exists
-            flash('If an account exists with that email, a password reset link will be sent.', 'info')
-            
-        return redirect(url_for('forgot_password'))
+            flash('If an account exists with that email, you will receive an OTP.', 'info')
+            return redirect(url_for('forgot_password'))
     
     return render_template('forgot_password.html')
 
-@app.route('/reset-password/<token>', methods=['GET', 'POST'])
-def reset_password(token):
-    try:
-        email = serializer.loads(token, salt='password-reset-salt', max_age=3600)  # Token expires in 1 hour
-    except:
-        flash('The password reset link is invalid or has expired.', 'error')
-        return redirect(url_for('login'))
-    
-    user = User.query.filter_by(email=email).first()
-    
+@app.route('/verify-otp', methods=['GET', 'POST'])
+def verify_otp():
+    if 'reset_email' not in session:
+        return redirect(url_for('forgot_password'))
+        
+    if request.method == 'POST':
+        otp = request.form['otp']
+        email = session.get('reset_email')
+        if not email:
+            flash('Invalid request. Please try again.', 'error')
+            return redirect(url_for('forgot_password'))
+            
+        user = User.query.filter_by(email=email).first()
+        
+        if not user or not user.reset_otp:
+            flash('Invalid request. Please try again.', 'error')
+            return redirect(url_for('forgot_password'))
+            
+        # Check if OTP is expired (10 minutes validity)
+        current_time = datetime.now(dt.UTC)
+        otp_time = user.otp_created_at
+        if otp_time is None:
+            flash('Invalid request. Please try again.', 'error')
+            return redirect(url_for('forgot_password'))
+            
+        otp_time = otp_time.replace(tzinfo=dt.UTC)
+        if current_time - otp_time > timedelta(minutes=10):
+            user.reset_otp = None
+            user.otp_created_at = None
+            db.session.commit()
+            flash('OTP has expired. Please request a new one.', 'error')
+            return redirect(url_for('forgot_password'))
+            
+        if user.reset_otp == otp:
+            session['otp_verified'] = True
+            return redirect(url_for('reset_password'))
+        else:
+            flash('Invalid OTP. Please try again.', 'error')
+            
+    return render_template('verify_otp.html')
+
+@app.route('/reset-password', methods=['GET', 'POST'])
+def reset_password():
+    if 'reset_email' not in session or 'otp_verified' not in session:
+        return redirect(url_for('forgot_password'))
+        
     if request.method == 'POST':
         password = request.form['password']
         confirm_password = request.form['confirm_password']
@@ -431,10 +504,20 @@ def reset_password(token):
         if password != confirm_password:
             flash('Passwords do not match.', 'error')
             return render_template('reset_password.html')
-        
+            
+        user = User.query.filter_by(email=session['reset_email']).first()
+        if not user:
+            return redirect(url_for('forgot_password'))
+            
         # Update password
         user.password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+        user.reset_otp = None
+        user.otp_created_at = None
         db.session.commit()
+        
+        # Clear session
+        session.pop('reset_email', None)
+        session.pop('otp_verified', None)
         
         flash('Your password has been updated! You can now log in with your new password.', 'success')
         return redirect(url_for('login'))
@@ -454,6 +537,27 @@ def create_admin(username):
     else:
         click.echo(f"User {username} not found.")
 
+@app.route('/test-email')
+def test_email():
+    try:
+        # Log current configuration
+        logger.info(f"Testing email configuration...")
+        logger.info(f"MAIL_SERVER: {app.config['MAIL_SERVER']}")
+        logger.info(f"MAIL_PORT: {app.config['MAIL_PORT']}")
+        logger.info(f"MAIL_USE_TLS: {app.config['MAIL_USE_TLS']}")
+        logger.info(f"MAIL_USERNAME: {app.config['MAIL_USERNAME']}")
+        
+        # Try to send a test email
+        msg = Message('LOCOTO - Test Email',
+                    sender=app.config['MAIL_USERNAME'],
+                    recipients=[app.config['MAIL_USERNAME']])
+        msg.body = 'This is a test email to verify the email configuration.'
+        mail.send(msg)
+        return 'Email sent successfully! Check your inbox.'
+    except Exception as e:
+        logger.error(f"Test email error: {str(e)}")
+        return f'Error sending email: {str(e)}'
+
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=False)
 

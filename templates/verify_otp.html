@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Verify OTP - LOCOTO">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>LOCOTO - Verify OTP</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="static/css/fontawesome.css">
+    <link rel="stylesheet" href="static/css/templatemo-onix-digital.css">
+    <link rel="stylesheet" href="static/css/animated.css">
+    <link rel="stylesheet" href="static/css/owl.css">
+
+    <style>
+        .otp-section {
+            margin-top: 120px;
+            padding: 80px 0;
+        }
+
+        .otp-card {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 0 auto;
+            max-width: 500px;
+            padding: 40px;
+        }
+
+        .otp-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            color: #a05334;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .otp-text {
+            font-size: 16px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            color: #2a2a2a;
+        }
+
+        .otp-input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            letter-spacing: 8px;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .otp-input:focus {
+            border-color: #03a4ed;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(3, 164, 237, 0.1);
+        }
+
+        .verify-btn {
+            width: 100%;
+            padding: 12px;
+            background-image: linear-gradient(to right, #1e3c72 0%, #03a4ed 51%, #1e3c72 100%);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.5s;
+            background-size: 200% auto;
+        }
+
+        .verify-btn:hover {
+            background-position: right center;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: #03a4ed;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .back-link a:hover {
+            color: #1e3c72;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <div class="logo">
+                            <img src="static/images/ChatGPT Image Apr 13, 2025, 03_15_04 PM.png" alt="LOCOTO" width="150" height="150">
+                        </div>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="/">Home</a></li>
+                            <li class="scroll-to-section"><a href="register">Sign-Up</a></li>
+                            <li class="scroll-to-section"><a href="login">Sign-In</a></li>
+                            <li class="scroll-to-section"><a href="aboutus">About Us</a></li>
+                            <li class="scroll-to-section"><div class="main-red-button-hover"><a href="#contact">Contact Us Now</a></div></li> 
+                        </ul>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <div class="otp-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="otp-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <h1 class="otp-title">Verify OTP</h1>
+                        <p class="otp-text">Please enter the 6-digit code sent to your email.</p>
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert alert-info">{{ message }}</div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                        <form action="{{ url_for('verify_otp') }}" method="POST">
+                            <input type="text" class="otp-input" name="otp" maxlength="6" pattern="\d{6}" required 
+                                   placeholder="Enter OTP" autocomplete="off">
+                            <button type="submit" class="verify-btn">Verify OTP</button>
+                        </form>
+                        <div class="back-link">
+                            <a href="{{ url_for('forgot_password') }}">Request new OTP</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-dec">
+        <img src="static/images/footer-dec.png" alt="">
+    </div>
+
+    <!-- Scripts -->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/owl-carousel.js"></script>
+    <script src="static/js/animation.js"></script>
+    <script src="static/js/imagesloaded.js"></script>
+    <script src="static/js/custom.js"></script>
+</body>
+</html>

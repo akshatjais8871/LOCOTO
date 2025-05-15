@@ -688,3 +688,29 @@ Networking
 You Manage
 Other Manages
 2025-04-30 15:08:30,013 - __main__ - DEBUG - Detected language: en
+2025-05-15 14:32:14,008 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-7423770510asm10625097b3a.26 - gsmtp')
+2025-05-15 14:32:41,158 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-b234ad3ea02sm8674106a12.39 - gsmtp')
+2025-05-15 14:35:32,691 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-b26e3875fa6sm159345a12.54 - gsmtp')
+2025-05-15 14:38:41,709 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
+2025-05-15 14:38:44,718 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-30e11e81788sm2305814a91.1 - gsmtp')
+2025-05-15 14:42:13,185 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
+2025-05-15 14:42:15,600 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-7423776109csm10933575b3a.82 - gsmtp')
+2025-05-15 14:42:15,631 - __main__ - ERROR - Detailed email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-7423776109csm10933575b3a.82 - gsmtp')
+2025-05-15 14:45:56,872 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
+2025-05-15 14:46:02,905 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-30e334016c0sm2977447a91.8 - gsmtp')
+2025-05-15 14:46:02,945 - __main__ - ERROR - Detailed email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-30e334016c0sm2977447a91.8 - gsmtp')
+2025-05-15 14:47:08,900 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
+2025-05-15 14:47:11,238 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-74237a0d01dsm10508357b3a.87 - gsmtp')
+2025-05-15 14:47:11,286 - __main__ - ERROR - Detailed email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-74237a0d01dsm10508357b3a.87 - gsmtp')
+2025-05-15 14:48:49,324 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
+2025-05-15 14:48:51,691 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-22fc829f388sm112384685ad.214 - gsmtp')
+2025-05-15 14:48:51,725 - __main__ - ERROR - Detailed email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-22fc829f388sm112384685ad.214 - gsmtp')
+2025-05-15 14:49:48,376 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
+2025-05-15 14:49:50,780 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-22fc7741d9fsm111950575ad.81 - gsmtp')
+2025-05-15 14:49:50,809 - __main__ - ERROR - Detailed email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-22fc7741d9fsm111950575ad.81 - gsmtp')
+2025-05-15 15:16:04,668 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
+2025-05-15 15:16:07,728 - __main__ - INFO - Successfully sent OTP email to: assworld1601@gmail.com
+2025-05-15 15:18:14,457 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
+2025-05-15 15:18:17,512 - __main__ - INFO - Successfully sent OTP email to: assworld1601@gmail.com
+2025-05-15 15:23:52,977 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
+2025-05-15 15:23:56,112 - __main__ - INFO - Successfully sent OTP email to: assworld1601@gmail.com
