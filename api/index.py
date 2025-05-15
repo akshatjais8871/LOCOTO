@@ -45,7 +45,7 @@ handler.setFormatter(formatter)
 # Add the handler to the logger
 logger.addHandler(handler)
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../templates', static_folder='../static')
 CORS(app)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
@@ -557,6 +557,9 @@ def test_email():
     except Exception as e:
         logger.error(f"Test email error: {str(e)}")
         return f'Error sending email: {str(e)}'
+    
+def handler(request, *args, **kwargs):
+    return app(request.environ, start_response=kwargs.get("start_response"))
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=False)
