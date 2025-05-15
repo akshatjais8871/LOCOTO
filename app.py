@@ -162,7 +162,7 @@ if not os.path.exists(app.config['UPLOAD_FOLDER']):
     os.makedirs(app.config['UPLOAD_FOLDER'])
 
 # Configure Gemini API
-genai.configure(api_key="AIzaSyD4i5vCeP-dl8QRDetOdVc5gpjRe7SNe5o")
+genai.configure(api_key=os.getenv('API_KEY'))
 generation_config = {
 "temperature": 0.4,
 "top_p": 0.8,
