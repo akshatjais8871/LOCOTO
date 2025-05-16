@@ -740,3 +740,13 @@ Other Manages
 AND STAY HUMBLE."
 Thought of The Day:-
 2025-05-16 15:25:48,806 - __main__ - DEBUG - Detected language: en
+2025-05-16 15:27:39,583 - __main__ - DEBUG - Request received
+2025-05-16 15:27:39,588 - __main__ - DEBUG - Files in request: ['file']
+2025-05-16 15:27:39,588 - __main__ - DEBUG - Form data in request: ['language']
+2025-05-16 15:27:39,588 - __main__ - DEBUG - File name: c4c481d04bbb80300efffa05fc0e3738.jpg
+2025-05-16 15:27:39,588 - __main__ - DEBUG - Selected language code: hi
+2025-05-16 15:27:39,592 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-05-16 15:27:39,592 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-05-16 15:27:39,612 - __main__ - DEBUG - Image opened successfully: JPEG, size: (730, 1264)
+2025-05-16 15:27:39,650 - __main__ - DEBUG - Image converted to base64 successfully
+2025-05-16 15:27:42,589 - __main__ - DEBUG - Detected language: ta
