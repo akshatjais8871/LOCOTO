@@ -727,3 +727,16 @@ Other Manages
 2025-05-16 15:18:48,142 - __main__ - DEBUG - Image converted to base64 successfully
 2025-05-16 15:18:53,060 - __main__ - DEBUG - Detected language: ta
 2025-05-16 15:18:53,778 - __main__ - DEBUG - Translated text: If you are going to trust someone, don't trust their words.  Watch their actions and then trust.
+2025-05-16 15:25:44,735 - __main__ - DEBUG - Request received
+2025-05-16 15:25:44,735 - __main__ - DEBUG - Files in request: ['file']
+2025-05-16 15:25:44,735 - __main__ - DEBUG - Form data in request: ['language']
+2025-05-16 15:25:44,735 - __main__ - DEBUG - File name: thought-of-the-day-for-school-notice-board-1741529075375_v.webp
+2025-05-16 15:25:44,735 - __main__ - DEBUG - Selected language code: mr
+2025-05-16 15:25:44,735 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-05-16 15:25:44,735 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-05-16 15:25:45,004 - __main__ - DEBUG - Image opened successfully: WEBP, size: (640, 360)
+2025-05-16 15:25:45,019 - __main__ - DEBUG - Image converted to base64 successfully
+2025-05-16 15:25:48,098 - __main__ - DEBUG - Detected text: "DREAM BIG, WORK HARD,
+AND STAY HUMBLE."
+Thought of The Day:-
+2025-05-16 15:25:48,806 - __main__ - DEBUG - Detected language: en
