@@ -35,7 +35,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
 # Create a file handler
-handler = logging.FileHandler('app.log')
+handler = logging.StreamHandler()
 handler.setLevel(logging.DEBUG)
 
 # Create a logging format
@@ -48,8 +48,15 @@ logger.addHandler(handler)
 app = Flask(__name__)
 CORS(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-app.config['SECRET_KEY'] = 'secret'
+# Set template and static folders relative to the api directory
+import pathlib
+BASE_DIR = pathlib.Path(__file__).resolve().parent.parent
+app.template_folder = str(BASE_DIR / 'templates')
+app.static_folder = str(BASE_DIR / 'static')
+
+# For Vercel, use in-memory SQLite database
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'secret')
 
 db = SQLAlchemy(app)
 
@@ -162,7 +169,7 @@ if not os.path.exists(app.config['UPLOAD_FOLDER']):
     os.makedirs(app.config['UPLOAD_FOLDER'])
 
 # Configure Gemini API
-genai.configure(api_key="AIzaSyD4i5vCeP-dl8QRDetOdVc5gpjRe7SNe5o")
+genai.configure(api_key=os.getenv('API_KEY'))
 generation_config = {
 "temperature": 0.4,
 "top_p": 0.8,
@@ -557,7 +564,7 @@ def test_email():
     except Exception as e:
         logger.error(f"Test email error: {str(e)}")
         return f'Error sending email: {str(e)}'
-
-if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000, debug=False)
+    
+app = Flask(__name__, template_folder='../templates', static_folder='../static')
+CORS(app)
 
