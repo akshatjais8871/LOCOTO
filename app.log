@@ -750,3 +750,33 @@ Thought of The Day:-
 2025-05-16 15:27:39,612 - __main__ - DEBUG - Image opened successfully: JPEG, size: (730, 1264)
 2025-05-16 15:27:39,650 - __main__ - DEBUG - Image converted to base64 successfully
 2025-05-16 15:27:42,589 - __main__ - DEBUG - Detected language: ta
+2025-05-17 22:41:33,189 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
+2025-05-17 22:41:36,414 - __main__ - INFO - Successfully sent OTP email to: assworld1601@gmail.com
+2025-05-17 22:44:09,658 - __main__ - DEBUG - Request received
+2025-05-17 22:44:21,890 - __main__ - DEBUG - Files in request: ['file']
+2025-05-17 22:44:21,891 - __main__ - DEBUG - Form data in request: ['language']
+2025-05-17 22:44:21,891 - __main__ - DEBUG - File name: 17475020155976785042098821354815.jpg
+2025-05-17 22:44:21,891 - __main__ - DEBUG - Selected language code: hi
+2025-05-17 22:44:21,891 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-05-17 22:44:21,892 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-05-17 22:44:21,955 - __main__ - DEBUG - Image opened successfully: JPEG, size: (3060, 4080)
+2025-05-17 22:44:22,153 - __main__ - DEBUG - Image converted to base64 successfully
+2025-05-17 22:44:34,166 - __main__ - DEBUG - Detected text: DELL
+Inspiron 15 3000
+
+15
+15.6" Full HD WVA
+Display
+
+HD
+Webcam HD
+
+<
+>
+Narrow Borders
+
+HDMI
+SD Card Reader
+
+Spill-Resistant Keyboard
+2025-05-17 22:44:34,832 - __main__ - DEBUG - Detected language: en

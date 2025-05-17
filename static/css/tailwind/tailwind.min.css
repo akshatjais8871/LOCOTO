@@ -1,0 +1,88 @@
+/*! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com */
+
+/* Basic utility classes from Tailwind */
+
+/* Container */
+.container{width:100%}
+@media (min-width:640px){.container{max-width:640px}}
+@media (min-width:768px){.container{max-width:768px}}
+@media (min-width:1024px){.container{max-width:1024px}}
+@media (min-width:1280px){.container{max-width:1280px}}
+@media (min-width:1536px){.container{max-width:1536px}}
+
+/* Display */
+.block{display:block}
+.flex{display:flex}
+.hidden{display:none}
+.grid{display:grid}
+
+/* Flexbox */
+.flex-row{flex-direction:row}
+.flex-col{flex-direction:column}
+.items-center{align-items:center}
+.justify-center{justify-content:center}
+.justify-between{justify-content:space-between}
+.justify-end{justify-content:flex-end}
+.flex-wrap{flex-wrap:wrap}
+
+/* Grid */
+.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.gap-4{gap:1rem}
+.gap-6{gap:1.5rem}
+
+/* Spacing */
+.p-2{padding:0.5rem}
+.p-4{padding:1rem}
+.p-6{padding:1.5rem}
+.px-2{padding-left:0.5rem;padding-right:0.5rem}
+.px-4{padding-left:1rem;padding-right:1rem}
+.py-2{padding-top:0.5rem;padding-bottom:0.5rem}
+.py-4{padding-top:1rem;padding-bottom:1rem}
+.m-2{margin:0.5rem}
+.m-4{margin:1rem}
+.mx-auto{margin-left:auto;margin-right:auto}
+.my-2{margin-top:0.5rem;margin-bottom:0.5rem}
+.my-4{margin-top:1rem;margin-bottom:1rem}
+
+/* Text */
+.text-center{text-align:center}
+.text-sm{font-size:0.875rem;line-height:1.25rem}
+.text-base{font-size:1rem;line-height:1.5rem}
+.text-lg{font-size:1.125rem;line-height:1.75rem}
+.text-xl{font-size:1.25rem;line-height:1.75rem}
+.text-2xl{font-size:1.5rem;line-height:2rem}
+.font-bold{font-weight:700}
+.font-medium{font-weight:500}
+
+/* Width & Height */
+.w-full{width:100%}
+.w-auto{width:auto}
+.h-auto{height:auto}
+.h-full{height:100%}
+
+/* Responsive helpers */
+@media (max-width:640px){
+  .sm\:hidden{display:none}
+  .sm\:block{display:block}
+  .sm\:flex-col{flex-direction:column}
+  .sm\:text-center{text-align:center}
+  .sm\:w-full{width:100%}
+}
+
+@media (max-width:768px){
+  .md\:hidden{display:none}
+  .md\:block{display:block}
+  .md\:flex-col{flex-direction:column}
+  .md\:grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+  .md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media (max-width:1024px){
+  .lg\:hidden{display:none}
+  .lg\:block{display:block}
+  .lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+} 

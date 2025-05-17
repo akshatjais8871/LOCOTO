@@ -87,16 +87,19 @@
 
     
 
-	// Menu Dropdown Toggle
+	// Menu Dropdown Toggle - Disabled to use the responsive-menu.js handler instead
+  /* 
   if($('.menu-trigger').length){
     $(".menu-trigger").on('click', function() { 
       $(this).toggleClass('active');
       $('.header-area .nav').slideToggle(200);
     });
   }
+  */
 
 
-  // Menu elevator animation
+  // Menu elevator animation - DISABLED to avoid conflicts with responsive-menu.js
+  /*
   $('.scroll-to-section a[href*=\\#]:not([href=\\#])').on('click', function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -114,11 +117,13 @@
       }
     }
   });
+  */
 
   $(document).ready(function () {
-      $(document).on("scroll", onScroll);
+      $(document).off("scroll"); // Remove previous scroll handler
       
-      //smoothscroll
+      //smoothscroll - DISABLED to avoid conflicts
+      /*
       $('.scroll-to-section a[href^="#"]').on('click', function (e) {
           e.preventDefault();
           $(document).off("scroll");
@@ -138,8 +143,10 @@
               $(document).on("scroll", onScroll);
           });
       });
+      */
   });
 
+  /*
   function onScroll(event){
       var scrollPos = $(document).scrollTop();
       $('.nav a').each(function () {
@@ -154,19 +161,15 @@
           }
       });
   }
-
-
+  */
 
 	// Page loading animation
 	 $(window).on('load', function() {
-
         $('#js-preloader').addClass('loaded');
-
     });
 
-	
-
-	// Window Resize Mobile Menu Fix
+	// Window Resize Mobile Menu Fix - Disabled to use responsive-menu.js instead
+  /*
   function mobileNav() {
     var width = $(window).width();
     $('.submenu').on('click', function() {
@@ -176,8 +179,12 @@
       }
     });
   }
+  */
 
-
-
+  console.log('custom.js loaded but menu handlers disabled to avoid conflicts with responsive-menu.js');
+  
+  // Disable all jQuery handlers for menu-trigger
+  $(document).off('click', '.menu-trigger');
+  $('.menu-trigger').off();
 
 })(window.jQuery);
