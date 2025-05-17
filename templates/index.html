@@ -23,13 +23,217 @@
   <!-- Bootstrap core CSS -->
   <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-
   <!-- Additional CSS Files -->
   <link rel="stylesheet" href="static/css/fontawesome.css">
   <link rel="stylesheet" href="static/css/templatemo-onix-digital.css">
   <link rel="stylesheet" href="static/css/animated.css">
   <link rel="stylesheet" href="static/css/owl.css">
+  
+  <!-- Responsive Design -->
   <style>
+    /* Base Responsive Settings */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+    }
+
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    /* Responsive Container */
+    .container {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 1200px;
+    }
+
+    /* Responsive Images */
+    img {
+      max-width: 100%;
+      height: auto;
+    }    /* Mobile Menu */
+    .menu-trigger {
+      display: none;
+      cursor: pointer;
+      padding: 10px;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    /* Navbar Responsive Styles */
+    @media screen and (max-width: 991px) {
+      .header-area .main-nav {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-height: 80px;
+      }
+
+      .header-area .main-nav .logo {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: auto;
+      }
+
+      .header-area .main-nav .logo img {
+        max-width: 100px;
+        height: auto;
+      }
+
+      .header-area .main-nav ul.nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        margin: 0;
+        padding: 0;
+        z-index: 999;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: none;
+      }
+
+      .header-area .main-nav ul.nav.active {
+        display: block;
+      }
+
+      .header-area .main-nav ul.nav li {
+        padding: 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+      }
+
+      .header-area .main-nav ul.nav li:last-child {
+        border-bottom: none;
+      }
+
+      .header-area .main-nav ul.nav li a {
+        display: block;
+        padding: 15px;
+        color: #1e1e1e;
+      }
+
+      .header-area .main-nav ul.nav li .main-red-button-hover {
+        margin: 15px auto;
+        width: fit-content;
+      }
+    }
+
+    /* Responsive Media Queries */
+    @media screen and (max-width: 1200px) {
+      .container {
+        max-width: 960px;
+      }
+    }
+
+    @media screen and (max-width: 991px) {
+      .container {
+        max-width: 720px;
+      }
+      
+      /* Header Adjustments */
+      .header-area {
+        padding: 15px 0;
+      }
+      
+      .header-area .main-nav .logo {
+        float: left;
+      }
+      
+      .menu-trigger {
+        display: block;
+        float: right;
+      }
+      
+      .main-nav .nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 0;
+        z-index: 999;
+      }
+      
+      .main-nav .nav.active {
+        display: block;
+      }
+      
+      .main-nav .nav li {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        max-width: 540px;
+      }
+      
+      /* Banner Adjustments */
+      .main-banner {
+        padding: 120px 0 60px;
+      }
+      
+      .header-text h1 {
+        font-size: 2em;
+      }
+      
+      .header-text h6 {
+        font-size: 1em;
+      }
+      
+      /* Services Adjustments */
+      .our-services .item {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      .container {
+        max-width: 100%;
+        padding: 0 15px;
+      }
+      
+      /* Text Adjustments */
+      .hindi-tagline {
+        font-size: 1.5rem;
+      }
+      
+      .transliteration {
+        font-size: 1rem;
+      }
+      
+      .translation {
+        font-size: 1.2rem;
+      }
+      
+      /* Contact Form */
+      #contact form {
+        padding: 20px;
+      }
+      
+      #contact iframe {
+        height: 300px;
+      }
+    }
+
     /* Custom Animations */
     @keyframes float {
       0% {
@@ -444,7 +648,6 @@
     </div>
   </footer>
 
-
   <!-- Scripts -->
   <script src="static/vendor/jquery/jquery.min.js"></script>
   <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -454,6 +657,45 @@
   <script src="static/js/custom.js"></script>
 
   <script>
+    // Mobile Menu Toggle
+    $(document).ready(function() {
+      $('.menu-trigger').on('click', function() {
+        $('.main-nav .nav').toggleClass('active');
+        $(this).toggleClass('active');
+      });
+
+      // Close menu when clicking outside
+      $(document).on('click', function(e) {
+        if(!$(e.target).closest('.main-nav').length) {
+          $('.main-nav .nav').removeClass('active');
+          $('.menu-trigger').removeClass('active');
+        }
+      });
+
+      // Responsive Image Loading
+      $('img').each(function() {
+        $(this).addClass('lazy-load');
+        if(this.complete) {
+          $(this).addClass('loaded');
+        } else {
+          $(this).on('load', function() {
+            $(this).addClass('loaded');
+          });
+        }
+      });
+
+      // Handle window resize
+      let resizeTimer;
+      $(window).on('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+          if($(window).width() > 991) {
+            $('.main-nav .nav').removeClass('active');
+            $('.menu-trigger').removeClass('active');
+          }
+        }, 250);
+      });
+    });
     // Acc
     $(document).on("click", ".naccs .menu div", function () {
       var numberIndex = $(this).index();
