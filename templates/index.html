@@ -23,16 +23,13 @@
   <!-- Bootstrap core CSS -->
   <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+
   <!-- Additional CSS Files -->
   <link rel="stylesheet" href="static/css/fontawesome.css">
   <link rel="stylesheet" href="static/css/templatemo-onix-digital.css">
   <link rel="stylesheet" href="static/css/animated.css">
   <link rel="stylesheet" href="static/css/owl.css">
-  <link rel="stylesheet" href="static/css/responsive.css">
-  
-  <!-- Responsive Design -->
   <style>
-    /* Remove other styles but keep animations and effects */
     /* Custom Animations */
     @keyframes float {
       0% {
@@ -95,11 +92,90 @@
     }
 
     .pulse-animation {
-      animation: pulse 3s ease-in-out infinite;
+      animation: pulse 2s ease-in-out infinite;
     }
 
     .fade-in-up {
       animation: fadeInUp 1s ease-out forwards;
+    }
+
+    /* Enhanced Header Text */
+    .header-text h1,
+    .header-text h6 {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Service Cards Enhancement */
+    .item {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Contact Form Enhancement */
+    .contact-us form {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 30px;
+    }
+
+    /* Portfolio Items Enhancement */
+    .thumb {
+      overflow: hidden;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .thumb:hover {
+      transform: scale(1.05);
+    }
+
+    .thumb img {
+      transition: all 0.3s ease;
+    }
+
+    .thumb:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Hindi Taglines Styles */
+    .hindi-tagline {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      line-height: 1.4;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .transliteration {
+      font-size: 1.4rem;
+      color: #666;
+      margin-bottom: 15px;
+      font-style: italic;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 25px;
+      display: inline-block;
+    }
+
+    .translation {
+      font-size: 1.5rem;
+      color: #4a90e2;
+      font-weight: 600;
+      background: rgba(74, 144, 226, 0.1);
+      padding: 15px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(74, 144, 226, 0.2);
     }
   </style>
 </head>
@@ -128,7 +204,8 @@
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
             <div class="logo">
-              <img src="/static/images/ChatGPT Image Apr 13, 2025, 03_15_04 PM.png" alt="LOCOTO" class="responsive-logo" style="max-height: 65px; width: auto;">
+              <img src="/static/images/ChatGPT Image Apr 13, 2025, 03_15_04 PM.png" alt="LOCOTO" width="150"
+                height="150">
             </div>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
@@ -151,9 +228,7 @@
               </li>
             </ul>
             <a class='menu-trigger'>
-              <span></span>
-              <span></span>
-              <span></span>
+              <span>Menu</span>
             </a>
             <!-- ***** Menu End ***** -->
           </nav>
@@ -369,6 +444,7 @@
     </div>
   </footer>
 
+
   <!-- Scripts -->
   <script src="static/vendor/jquery/jquery.min.js"></script>
   <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -376,23 +452,8 @@
   <script src="static/js/animation.js"></script>
   <script src="static/js/imagesloaded.js"></script>
   <script src="static/js/custom.js"></script>
-  <script src="static/js/responsive-menu.js"></script>
+
   <script>
-    // Responsible Image Loading
-    $(document).ready(function() {
-      // Responsive Image Loading
-      $('img').each(function() {
-        $(this).addClass('lazy-load');
-        if(this.complete) {
-          $(this).addClass('loaded');
-        } else {
-          $(this).on('load', function() {
-            $(this).addClass('loaded');
-          });
-        }
-      });
-    });
-    
     // Acc
     $(document).on("click", ".naccs .menu div", function () {
       var numberIndex = $(this).index();
@@ -416,10 +477,10 @@
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/static/sw.js')
           .then(registration => {
-            console.log('Service Worker registered with scope:', registration.scope);
+            console.log('ServiceWorker registration successful');
           })
           .catch(err => {
-            console.error('Service Worker registration failed:', err);
+            console.log('ServiceWorker registration failed: ', err);
           });
       });
     }
