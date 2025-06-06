@@ -1020,3 +1020,38 @@ levels.
 2025-06-03 10:21:38,482 - __main__ - DEBUG - Detected language: en
 2025-06-03 11:51:52,060 - __main__ - INFO - Google OAuth client configured
 2025-06-06 09:02:20,863 - __main__ - INFO - Google OAuth client configured
+2025-06-06 11:31:46,159 - __main__ - INFO - Google OAuth client configured
+2025-06-06 11:32:19,728 - __main__ - DEBUG - Request received
+2025-06-06 11:32:19,733 - __main__ - DEBUG - Files in request: ['file']
+2025-06-06 11:32:19,733 - __main__ - DEBUG - Form data in request: ['language']
+2025-06-06 11:32:19,733 - __main__ - DEBUG - File name: thought-of-the-day-for-school-notice-board-1741529075375_v.webp
+2025-06-06 11:32:19,733 - __main__ - DEBUG - Selected language code: hi
+2025-06-06 11:32:19,733 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-06-06 11:32:19,733 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-06-06 11:32:19,957 - __main__ - DEBUG - Image opened successfully: WEBP, size: (640, 360)
+2025-06-06 11:32:19,967 - __main__ - DEBUG - Image converted to base64 successfully
+2025-06-06 11:32:23,140 - __main__ - DEBUG - Detected text: "DREAM BIG, WORK HARD,
+AND STAY HUMBLE."
+Thought of The Day:-
+2025-06-06 11:32:23,859 - __main__ - DEBUG - Detected language: en
+2025-06-06 11:32:36,219 - __main__ - INFO - User aakashjaiswal8284 logging out
+2025-06-06 11:32:41,498 - __main__ - INFO - Google login initiated
+2025-06-06 11:32:41,498 - __main__ - INFO - Google OAuth redirect URI: http://127.0.0.1:5000/login/google/authorize
+2025-06-06 11:32:47,085 - __main__ - INFO - Processing Google OAuth callback
+2025-06-06 11:32:49,022 - __main__ - DEBUG - Google OAuth token received: ya29.a0AW4...
+2025-06-06 11:32:50,069 - __main__ - INFO - Google user info received: email=automobile8284@gmail.com, name=AuTOMoBILE
+2025-06-06 11:32:50,084 - __main__ - INFO - Creating new user via Google OAuth: automobile8284
+2025-06-06 11:32:50,117 - __main__ - INFO - User automobile8284 logged in successfully via Google
+2025-06-06 11:33:03,559 - __main__ - DEBUG - Request received
+2025-06-06 11:33:03,559 - __main__ - DEBUG - Files in request: ['file']
+2025-06-06 11:33:03,559 - __main__ - DEBUG - Form data in request: ['language']
+2025-06-06 11:33:03,559 - __main__ - DEBUG - File name: thought-of-the-day-for-school-notice-board-1741529075375_v.webp
+2025-06-06 11:33:03,559 - __main__ - DEBUG - Selected language code: bn
+2025-06-06 11:33:03,559 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-06-06 11:33:03,559 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-06-06 11:33:03,631 - __main__ - DEBUG - Image opened successfully: WEBP, size: (640, 360)
+2025-06-06 11:33:03,634 - __main__ - DEBUG - Image converted to base64 successfully
+2025-06-06 11:33:05,202 - __main__ - DEBUG - Detected text: "DREAM BIG, WORK HARD,
+AND STAY HUMBLE."
+Thought of The Day:-
+2025-06-06 11:33:05,211 - __main__ - DEBUG - Detected language: en
