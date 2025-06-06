@@ -688,105 +688,335 @@ Networking
 You Manage
 Other Manages
 2025-04-30 15:08:30,013 - __main__ - DEBUG - Detected language: en
-2025-05-15 14:32:14,008 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-7423770510asm10625097b3a.26 - gsmtp')
-2025-05-15 14:32:41,158 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-b234ad3ea02sm8674106a12.39 - gsmtp')
-2025-05-15 14:35:32,691 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-b26e3875fa6sm159345a12.54 - gsmtp')
-2025-05-15 14:38:41,709 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
-2025-05-15 14:38:44,718 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-30e11e81788sm2305814a91.1 - gsmtp')
-2025-05-15 14:42:13,185 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
-2025-05-15 14:42:15,600 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-7423776109csm10933575b3a.82 - gsmtp')
-2025-05-15 14:42:15,631 - __main__ - ERROR - Detailed email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-7423776109csm10933575b3a.82 - gsmtp')
-2025-05-15 14:45:56,872 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
-2025-05-15 14:46:02,905 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-30e334016c0sm2977447a91.8 - gsmtp')
-2025-05-15 14:46:02,945 - __main__ - ERROR - Detailed email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-30e334016c0sm2977447a91.8 - gsmtp')
-2025-05-15 14:47:08,900 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
-2025-05-15 14:47:11,238 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-74237a0d01dsm10508357b3a.87 - gsmtp')
-2025-05-15 14:47:11,286 - __main__ - ERROR - Detailed email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-74237a0d01dsm10508357b3a.87 - gsmtp')
-2025-05-15 14:48:49,324 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
-2025-05-15 14:48:51,691 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-22fc829f388sm112384685ad.214 - gsmtp')
-2025-05-15 14:48:51,725 - __main__ - ERROR - Detailed email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-22fc829f388sm112384685ad.214 - gsmtp')
-2025-05-15 14:49:48,376 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
-2025-05-15 14:49:50,780 - __main__ - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-22fc7741d9fsm111950575ad.81 - gsmtp')
-2025-05-15 14:49:50,809 - __main__ - ERROR - Detailed email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-22fc7741d9fsm111950575ad.81 - gsmtp')
-2025-05-15 15:16:04,668 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
-2025-05-15 15:16:07,728 - __main__ - INFO - Successfully sent OTP email to: assworld1601@gmail.com
-2025-05-15 15:18:14,457 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
-2025-05-15 15:18:17,512 - __main__ - INFO - Successfully sent OTP email to: assworld1601@gmail.com
-2025-05-15 15:23:52,977 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
-2025-05-15 15:23:56,112 - __main__ - INFO - Successfully sent OTP email to: assworld1601@gmail.com
-2025-05-16 15:15:48,644 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
-2025-05-16 15:15:51,725 - __main__ - INFO - Successfully sent OTP email to: assworld1601@gmail.com
-2025-05-16 15:18:48,053 - __main__ - DEBUG - Request received
-2025-05-16 15:18:48,053 - __main__ - DEBUG - Files in request: ['file']
-2025-05-16 15:18:48,053 - __main__ - DEBUG - Form data in request: ['language']
-2025-05-16 15:18:48,053 - __main__ - DEBUG - File name: c4c481d04bbb80300efffa05fc0e3738.jpg
-2025-05-16 15:18:48,053 - __main__ - DEBUG - Selected language code: en
-2025-05-16 15:18:48,053 - __main__ - DEBUG - Starting upload_to_gemini function
-2025-05-16 15:18:48,053 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
-2025-05-16 15:18:48,110 - __main__ - DEBUG - Image opened successfully: JPEG, size: (730, 1264)
-2025-05-16 15:18:48,142 - __main__ - DEBUG - Image converted to base64 successfully
-2025-05-16 15:18:53,060 - __main__ - DEBUG - Detected language: ta
-2025-05-16 15:18:53,778 - __main__ - DEBUG - Translated text: If you are going to trust someone, don't trust their words.  Watch their actions and then trust.
-2025-05-16 15:25:44,735 - __main__ - DEBUG - Request received
-2025-05-16 15:25:44,735 - __main__ - DEBUG - Files in request: ['file']
-2025-05-16 15:25:44,735 - __main__ - DEBUG - Form data in request: ['language']
-2025-05-16 15:25:44,735 - __main__ - DEBUG - File name: thought-of-the-day-for-school-notice-board-1741529075375_v.webp
-2025-05-16 15:25:44,735 - __main__ - DEBUG - Selected language code: mr
-2025-05-16 15:25:44,735 - __main__ - DEBUG - Starting upload_to_gemini function
-2025-05-16 15:25:44,735 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
-2025-05-16 15:25:45,004 - __main__ - DEBUG - Image opened successfully: WEBP, size: (640, 360)
-2025-05-16 15:25:45,019 - __main__ - DEBUG - Image converted to base64 successfully
-2025-05-16 15:25:48,098 - __main__ - DEBUG - Detected text: "DREAM BIG, WORK HARD,
+2025-05-19 14:07:14,719 - __main__ - INFO - Google OAuth client configured
+2025-05-19 14:07:31,509 - __main__ - INFO - Google login initiated
+2025-05-19 14:07:31,509 - __main__ - INFO - Google OAuth redirect URI: http://127.0.0.1:5000/login/google/authorize
+2025-05-19 14:07:42,049 - __main__ - INFO - Processing Google OAuth callback
+2025-05-19 14:07:42,617 - __main__ - DEBUG - Google OAuth token received: ya29.a0AW4...
+2025-05-19 14:07:42,871 - __main__ - INFO - Google user info received: email=automobile8284@gmail.com, name=AuTOMoBILE
+2025-05-19 14:07:42,872 - __main__ - INFO - Creating new user via Google OAuth: automobile8284
+2025-05-19 14:07:42,901 - __main__ - INFO - User automobile8284 logged in successfully via Google
+2025-05-19 14:07:47,848 - __main__ - INFO - User automobile8284 logging out
+2025-05-19 14:08:33,548 - __main__ - INFO - Google OAuth client configured
+2025-05-19 14:08:46,126 - __main__ - INFO - Google login initiated
+2025-05-19 14:08:46,126 - __main__ - INFO - Google OAuth redirect URI: http://127.0.0.1:5000/login/google/authorize
+2025-05-19 14:08:57,158 - __main__ - INFO - Processing Google OAuth callback
+2025-05-19 14:08:57,159 - __main__ - ERROR - Google OAuth error: access_denied: 
+2025-05-19 14:08:57,159 - __main__ - ERROR - Detailed OAuth error:
+Traceback (most recent call last):
+  File "D:\LOCOTO\app.py", line 200, in google_authorize
+    token = google.authorize_access_token()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aakas\miniconda3\Lib\site-packages\authlib\integrations\flask_client\apps.py", line 91, in authorize_access_token
+    raise OAuthError(error=error, description=description)
+authlib.integrations.base_client.errors.OAuthError: access_denied: 
+2025-05-19 14:09:00,626 - __main__ - INFO - Google login initiated
+2025-05-19 14:09:00,626 - __main__ - INFO - Google OAuth redirect URI: http://127.0.0.1:5000/login/google/authorize
+2025-05-19 17:17:20,899 - __main__ - INFO - Google OAuth client configured
+2025-05-19 17:17:35,518 - __main__ - INFO - Google login initiated
+2025-05-19 17:17:35,518 - __main__ - INFO - Google OAuth redirect URI: http://127.0.0.1:5000/login/google/authorize
+2025-05-19 17:17:44,540 - __main__ - INFO - Processing Google OAuth callback
+2025-05-19 17:17:44,934 - __main__ - DEBUG - Google OAuth token received: ya29.a0AW4...
+2025-05-19 17:17:45,123 - __main__ - INFO - Google user info received: email=akshatjaiswal017@gmail.com, name=Akshat Jaiswal
+2025-05-19 17:17:45,139 - __main__ - INFO - Creating new user via Google OAuth: akshatjaiswal017
+2025-05-19 17:17:45,172 - __main__ - INFO - User akshatjaiswal017 logged in successfully via Google
+2025-05-19 17:18:13,855 - __main__ - DEBUG - Request received
+2025-05-19 17:18:13,861 - __main__ - DEBUG - Files in request: ['file']
+2025-05-19 17:18:13,861 - __main__ - DEBUG - Form data in request: ['language']
+2025-05-19 17:18:13,861 - __main__ - DEBUG - File name: thought-of-the-day-for-school-notice-board-1741529075375_v.webp
+2025-05-19 17:18:13,861 - __main__ - DEBUG - Selected language code: gu
+2025-05-19 17:18:13,861 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-05-19 17:18:13,863 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-05-19 17:18:14,133 - __main__ - DEBUG - Image opened successfully: WEBP, size: (640, 360)
+2025-05-19 17:18:14,153 - __main__ - DEBUG - Image converted to base64 successfully
+2025-05-19 17:18:17,136 - __main__ - DEBUG - Detected text: "DREAM BIG, WORK HARD,
 AND STAY HUMBLE."
 Thought of The Day:-
-2025-05-16 15:25:48,806 - __main__ - DEBUG - Detected language: en
-2025-05-16 15:27:39,583 - __main__ - DEBUG - Request received
-2025-05-16 15:27:39,588 - __main__ - DEBUG - Files in request: ['file']
-2025-05-16 15:27:39,588 - __main__ - DEBUG - Form data in request: ['language']
-2025-05-16 15:27:39,588 - __main__ - DEBUG - File name: c4c481d04bbb80300efffa05fc0e3738.jpg
-2025-05-16 15:27:39,588 - __main__ - DEBUG - Selected language code: hi
-2025-05-16 15:27:39,592 - __main__ - DEBUG - Starting upload_to_gemini function
-2025-05-16 15:27:39,592 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
-2025-05-16 15:27:39,612 - __main__ - DEBUG - Image opened successfully: JPEG, size: (730, 1264)
-2025-05-16 15:27:39,650 - __main__ - DEBUG - Image converted to base64 successfully
-2025-05-16 15:27:42,589 - __main__ - DEBUG - Detected language: ta
-2025-05-17 22:41:33,189 - __main__ - INFO - Attempting to send OTP email to: assworld1601@gmail.com
-2025-05-17 22:41:36,414 - __main__ - INFO - Successfully sent OTP email to: assworld1601@gmail.com
-2025-05-17 22:44:09,658 - __main__ - DEBUG - Request received
-2025-05-17 22:44:21,890 - __main__ - DEBUG - Files in request: ['file']
-2025-05-17 22:44:21,891 - __main__ - DEBUG - Form data in request: ['language']
-2025-05-17 22:44:21,891 - __main__ - DEBUG - File name: 17475020155976785042098821354815.jpg
-2025-05-17 22:44:21,891 - __main__ - DEBUG - Selected language code: hi
-2025-05-17 22:44:21,891 - __main__ - DEBUG - Starting upload_to_gemini function
-2025-05-17 22:44:21,892 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
-2025-05-17 22:44:21,955 - __main__ - DEBUG - Image opened successfully: JPEG, size: (3060, 4080)
-2025-05-17 22:44:22,153 - __main__ - DEBUG - Image converted to base64 successfully
-2025-05-17 22:44:34,166 - __main__ - DEBUG - Detected text: DELL
-Inspiron 15 3000
+2025-05-19 17:18:17,840 - __main__ - DEBUG - Detected language: en
+2025-05-19 21:40:30,550 - __main__ - INFO - Google OAuth client configured
+2025-05-19 21:41:33,217 - __main__ - INFO - Google login initiated
+2025-05-19 21:41:33,217 - __main__ - INFO - Google OAuth redirect URI: http://127.0.0.1:5000/login/google/authorize
+2025-05-19 21:41:41,551 - __main__ - INFO - Processing Google OAuth callback
+2025-05-19 21:41:42,018 - __main__ - DEBUG - Google OAuth token received: ya29.a0AW4...
+2025-05-19 21:41:42,260 - __main__ - INFO - Google user info received: email=aakashjaiswal8284@gmail.com, name=Akshat Jaiswal
+2025-05-19 21:41:42,280 - __main__ - INFO - Creating new user via Google OAuth: aakashjaiswal8284
+2025-05-19 21:41:42,302 - __main__ - INFO - User aakashjaiswal8284 logged in successfully via Google
+2025-05-19 21:55:08,693 - __main__ - INFO - Google OAuth client configured
+2025-05-19 21:56:09,138 - __main__ - INFO - Google OAuth client configured
+2025-05-19 22:08:30,894 - __main__ - INFO - User aakashjaiswal8284 logging out
+2025-05-19 23:18:41,482 - __main__ - INFO - Google OAuth client configured
+2025-05-19 23:18:54,077 - __main__ - INFO - Google login initiated
+2025-05-19 23:18:54,077 - __main__ - INFO - Google OAuth redirect URI: http://127.0.0.1:5000/login/google/authorize
+2025-05-19 23:19:00,003 - __main__ - INFO - Processing Google OAuth callback
+2025-05-19 23:19:00,366 - __main__ - DEBUG - Google OAuth token received: ya29.a0AW4...
+2025-05-19 23:19:00,597 - __main__ - INFO - Google user info received: email=akshatjaiswal017@gmail.com, name=Akshat Jaiswal
+2025-05-19 23:19:00,651 - __main__ - INFO - User akshatjaiswal017 logged in successfully via Google
+2025-05-19 23:20:04,324 - __main__ - DEBUG - Request received
+2025-05-19 23:20:04,327 - __main__ - DEBUG - Files in request: ['file']
+2025-05-19 23:20:04,327 - __main__ - DEBUG - Form data in request: ['language']
+2025-05-19 23:20:04,327 - __main__ - DEBUG - File name: 5916f8e582bf87ef789031da1393e719.jpg
+2025-05-19 23:20:04,327 - __main__ - DEBUG - Selected language code: en
+2025-05-19 23:20:04,327 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-05-19 23:20:04,327 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-05-19 23:20:04,378 - __main__ - DEBUG - Image opened successfully: JPEG, size: (236, 129)
+2025-05-19 23:20:04,396 - __main__ - DEBUG - Image converted to base64 successfully
+2025-05-19 23:20:07,905 - __main__ - DEBUG - Detected language: pa
+2025-05-19 23:20:08,590 - __main__ - DEBUG - Translated text: Everyone has their own time.
+2025-05-19 23:20:34,695 - __main__ - DEBUG - Request received
+2025-05-19 23:20:34,695 - __main__ - DEBUG - Files in request: ['file']
+2025-05-19 23:20:34,695 - __main__ - DEBUG - Form data in request: ['language']
+2025-05-19 23:20:34,695 - __main__ - DEBUG - File name: images.jpg
+2025-05-19 23:20:34,695 - __main__ - DEBUG - Selected language code: hi
+2025-05-19 23:20:34,695 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-05-19 23:20:34,695 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-05-19 23:20:34,704 - __main__ - DEBUG - Image opened successfully: JPEG, size: (168, 300)
+2025-05-19 23:20:34,706 - __main__ - DEBUG - Image converted to base64 successfully
+2025-05-19 23:20:36,260 - __main__ - DEBUG - Detected language: gu
+2025-05-19 23:22:26,550 - __main__ - DEBUG - Request received
+2025-05-19 23:22:26,550 - __main__ - DEBUG - Files in request: ['file']
+2025-05-19 23:22:26,550 - __main__ - DEBUG - Form data in request: ['language']
+2025-05-19 23:22:26,550 - __main__ - DEBUG - File name: Screenshot (415).png
+2025-05-19 23:22:26,550 - __main__ - DEBUG - Selected language code: en
+2025-05-19 23:22:26,550 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-05-19 23:22:26,550 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-05-19 23:22:26,582 - __main__ - DEBUG - Image opened successfully: PNG, size: (633, 810)
+2025-05-19 23:22:26,582 - __main__ - DEBUG - Converting image to RGB
+2025-05-19 23:22:26,638 - __main__ - DEBUG - Image converted to base64 successfully
+2025-05-19 23:22:28,813 - __main__ - DEBUG - Detected language: kn
+2025-05-19 23:22:29,495 - __main__ - DEBUG - Translated text: In the kingdom of books,
+my boundless joy,
+the world is hidden.
+2025-05-19 23:22:58,899 - __main__ - DEBUG - Request received
+2025-05-19 23:22:58,899 - __main__ - DEBUG - Files in request: ['file']
+2025-05-19 23:22:58,899 - __main__ - DEBUG - Form data in request: ['language']
+2025-05-19 23:22:58,899 - __main__ - DEBUG - File name: 64f49a3b1c30f3f76fb028f11e9023c6.jpg
+2025-05-19 23:22:58,899 - __main__ - DEBUG - Selected language code: bn
+2025-05-19 23:22:58,899 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-05-19 23:22:58,899 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-05-19 23:22:58,913 - __main__ - DEBUG - Image opened successfully: JPEG, size: (452, 640)
+2025-05-19 23:22:58,929 - __main__ - DEBUG - Image converted to base64 successfully
+2025-05-19 23:23:01,543 - __main__ - DEBUG - Detected text: Our World
 
-15
-15.6" Full HD WVA
-Display
+The grass is green,
+The sky is blue,
+The moon is white,
+The clouds are, too.
+The sun is yellow,
+The trees are brown,
+The leaves are red
+When falling down.
+The sunset's orange,
+The air is clear,
+What a colorful world
+We have right here!
 
-HD
-Webcam HD
+© Copyright English Created Resources 2020
+2025-05-19 23:23:01,550 - __main__ - DEBUG - Detected language: en
+2025-05-19 23:23:25,186 - __main__ - INFO - User akshatjaiswal017 logging out
+2025-05-20 07:22:03,004 - __main__ - INFO - Google OAuth client configured
+2025-05-20 07:24:18,990 - __main__ - INFO - Google OAuth client configured
+2025-05-20 09:52:34,250 - __main__ - INFO - Google OAuth client configured
+2025-05-20 10:24:43,225 - __main__ - INFO - Google login initiated
+2025-05-20 10:24:43,225 - __main__ - INFO - Google OAuth redirect URI: http://127.0.0.1:5000/login/google/authorize
+2025-05-20 10:24:47,855 - __main__ - INFO - Processing Google OAuth callback
+2025-05-20 10:24:48,488 - __main__ - DEBUG - Google OAuth token received: ya29.a0AW4...
+2025-05-20 10:24:48,811 - __main__ - INFO - Google user info received: email=aakashjaiswal8284@gmail.com, name=Akshat Jaiswal
+2025-05-20 10:24:48,886 - __main__ - INFO - User aakashjaiswal8284 logged in successfully via Google
+2025-05-20 10:26:45,826 - __main__ - DEBUG - Request received
+2025-05-20 10:26:45,826 - __main__ - DEBUG - Files in request: ['file']
+2025-05-20 10:26:45,826 - __main__ - DEBUG - Form data in request: ['language']
+2025-05-20 10:26:45,826 - __main__ - DEBUG - File name: 0b2234b30068a507642da7d31b40b11b.jpg
+2025-05-20 10:26:45,826 - __main__ - DEBUG - Selected language code: hi
+2025-05-20 10:26:45,826 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-05-20 10:26:45,826 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-05-20 10:26:45,937 - __main__ - DEBUG - Image opened successfully: JPEG, size: (236, 327)
+2025-05-20 10:26:45,954 - __main__ - DEBUG - Image converted to base64 successfully
+2025-05-20 10:26:50,226 - __main__ - DEBUG - Detected language: ta
+2025-05-24 09:51:00,169 - __main__ - INFO - Google OAuth client configured
+2025-05-24 09:51:46,675 - __main__ - DEBUG - Request received
+2025-05-24 09:51:46,706 - __main__ - DEBUG - Files in request: ['file']
+2025-05-24 09:51:46,706 - __main__ - DEBUG - Form data in request: ['language']
+2025-05-24 09:51:46,706 - __main__ - DEBUG - File name: Apple-Data-Privacy-Challenges-Akshat_Jaiswal.pdf
+2025-05-24 09:51:46,706 - __main__ - DEBUG - Selected language code: hi
+2025-05-24 09:51:46,706 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-05-24 09:51:46,706 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-05-24 09:51:46,988 - __main__ - ERROR - Error in upload_to_gemini: cannot identify image file 'static/uploads\\temp_image.jpg'
+2025-05-24 09:51:46,988 - __main__ - ERROR - Detailed error:
+Traceback (most recent call last):
+  File "D:\LOCOTO\app.py", line 355, in upload_to_gemini
+    with Image.open(temp_path) as image:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aakas\miniconda3\Lib\site-packages\PIL\Image.py", line 3532, in open
+    raise UnidentifiedImageError(msg)
+PIL.UnidentifiedImageError: cannot identify image file 'static/uploads\\temp_image.jpg'
+2025-05-24 09:51:46,999 - __main__ - ERROR - Failed to process image
+2025-05-24 09:51:53,059 - __main__ - DEBUG - Request received
+2025-05-24 09:51:53,065 - __main__ - DEBUG - Files in request: ['file']
+2025-05-24 09:51:53,065 - __main__ - DEBUG - Form data in request: ['language']
+2025-05-24 09:51:53,065 - __main__ - DEBUG - File name: Apple-Data-Privacy-Challenges-Akshat_Jaiswal.pdf
+2025-05-24 09:51:53,065 - __main__ - DEBUG - Selected language code: hi
+2025-05-24 09:51:53,065 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-05-24 09:51:53,065 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-05-24 09:51:53,094 - __main__ - ERROR - Error in upload_to_gemini: cannot identify image file 'static/uploads\\temp_image.jpg'
+2025-05-24 09:51:53,094 - __main__ - ERROR - Detailed error:
+Traceback (most recent call last):
+  File "D:\LOCOTO\app.py", line 355, in upload_to_gemini
+    with Image.open(temp_path) as image:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aakas\miniconda3\Lib\site-packages\PIL\Image.py", line 3532, in open
+    raise UnidentifiedImageError(msg)
+PIL.UnidentifiedImageError: cannot identify image file 'static/uploads\\temp_image.jpg'
+2025-05-24 09:51:53,101 - __main__ - ERROR - Failed to process image
+2025-05-24 09:52:11,530 - __main__ - DEBUG - Request received
+2025-05-24 09:52:11,541 - __main__ - DEBUG - Files in request: ['file']
+2025-05-24 09:52:11,541 - __main__ - DEBUG - Form data in request: ['language']
+2025-05-24 09:52:11,541 - __main__ - DEBUG - File name: Akshat-Jaiswal-Resume.pdf
+2025-05-24 09:52:11,541 - __main__ - DEBUG - Selected language code: hi
+2025-05-24 09:52:11,541 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-05-24 09:52:11,541 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-05-24 09:52:11,568 - __main__ - ERROR - Error in upload_to_gemini: cannot identify image file 'static/uploads\\temp_image.jpg'
+2025-05-24 09:52:11,569 - __main__ - ERROR - Detailed error:
+Traceback (most recent call last):
+  File "D:\LOCOTO\app.py", line 355, in upload_to_gemini
+    with Image.open(temp_path) as image:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aakas\miniconda3\Lib\site-packages\PIL\Image.py", line 3532, in open
+    raise UnidentifiedImageError(msg)
+PIL.UnidentifiedImageError: cannot identify image file 'static/uploads\\temp_image.jpg'
+2025-05-24 09:52:11,569 - __main__ - ERROR - Failed to process image
+2025-05-24 09:52:22,683 - __main__ - DEBUG - Request received
+2025-05-24 09:52:22,687 - __main__ - DEBUG - Files in request: ['file']
+2025-05-24 09:52:22,687 - __main__ - DEBUG - Form data in request: ['language']
+2025-05-24 09:52:22,687 - __main__ - DEBUG - File name: thought-of-the-day-for-school-notice-board-1741529075375_v.webp
+2025-05-24 09:52:22,687 - __main__ - DEBUG - Selected language code: hi
+2025-05-24 09:52:22,687 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-05-24 09:52:22,687 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-05-24 09:52:22,725 - __main__ - DEBUG - Image opened successfully: WEBP, size: (640, 360)
+2025-05-24 09:52:22,739 - __main__ - DEBUG - Image converted to base64 successfully
+2025-05-24 09:52:25,812 - __main__ - DEBUG - Detected text: "DREAM BIG, WORK HARD,
+AND STAY HUMBLE."
+Thought of The Day:-
+2025-05-24 09:52:26,558 - __main__ - DEBUG - Detected language: en
+2025-06-01 12:37:15,667 - __main__ - INFO - Google OAuth client configured
+2025-06-01 12:38:40,378 - __main__ - INFO - Google login initiated
+2025-06-01 12:38:40,378 - __main__ - INFO - Google OAuth redirect URI: http://127.0.0.1:5000/login/google/authorize
+2025-06-01 12:38:44,324 - __main__ - INFO - Processing Google OAuth callback
+2025-06-01 12:38:44,778 - __main__ - DEBUG - Google OAuth token received: ya29.a0AW4...
+2025-06-01 12:38:44,946 - __main__ - INFO - Google user info received: email=aakashjaiswal8284@gmail.com, name=Akshat Jaiswal
+2025-06-01 12:38:44,973 - __main__ - INFO - User aakashjaiswal8284 logged in successfully via Google
+2025-06-01 12:40:11,109 - __main__ - DEBUG - Request received
+2025-06-01 12:40:11,117 - __main__ - DEBUG - Files in request: ['file']
+2025-06-01 12:40:11,117 - __main__ - DEBUG - Form data in request: ['language']
+2025-06-01 12:40:11,117 - __main__ - DEBUG - File name: capture.png
+2025-06-01 12:40:11,117 - __main__ - DEBUG - Selected language code: hi
+2025-06-01 12:40:11,117 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-06-01 12:40:11,117 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-06-01 12:40:11,206 - __main__ - DEBUG - Image opened successfully: PNG, size: (640, 480)
+2025-06-01 12:40:11,206 - __main__ - DEBUG - Converting image to RGB
+2025-06-01 12:40:11,223 - __main__ - DEBUG - Image converted to base64 successfully
+2025-06-01 12:40:15,838 - __main__ - DEBUG - Detected language: en
+2025-06-01 12:41:08,313 - __main__ - DEBUG - Request received
+2025-06-01 12:41:08,318 - __main__ - DEBUG - Files in request: ['file']
+2025-06-01 12:41:08,318 - __main__ - DEBUG - Form data in request: ['language']
+2025-06-01 12:41:08,318 - __main__ - DEBUG - File name: capture.png
+2025-06-01 12:41:08,318 - __main__ - DEBUG - Selected language code: hi
+2025-06-01 12:41:08,318 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-06-01 12:41:08,318 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-06-01 12:41:08,341 - __main__ - DEBUG - Image opened successfully: PNG, size: (640, 480)
+2025-06-01 12:41:08,341 - __main__ - DEBUG - Converting image to RGB
+2025-06-01 12:41:08,358 - __main__ - DEBUG - Image converted to base64 successfully
+2025-06-01 12:41:10,474 - __main__ - DEBUG - Detected text: Hello what are you doing in india??
++
+Deep Research Canvas
+Gemini can make mistakes, so double-c
+1 2 3 4 5 6 7 8 9 0
+QWERTYUIOP
+ASDFGHJKL
+2025-06-01 12:41:10,497 - __main__ - DEBUG - Detected language: en
+2025-06-01 12:41:59,235 - __main__ - DEBUG - Request received
+2025-06-01 12:41:59,236 - __main__ - DEBUG - Files in request: ['file']
+2025-06-01 12:41:59,236 - __main__ - DEBUG - Form data in request: ['language']
+2025-06-01 12:41:59,236 - __main__ - DEBUG - File name: c4c481d04bbb80300efffa05fc0e3738.jpg
+2025-06-01 12:41:59,236 - __main__ - DEBUG - Selected language code: hi
+2025-06-01 12:41:59,236 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-06-01 12:41:59,236 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-06-01 12:41:59,243 - __main__ - DEBUG - Image opened successfully: JPEG, size: (730, 1264)
+2025-06-01 12:41:59,293 - __main__ - DEBUG - Image converted to base64 successfully
+2025-06-01 12:42:01,825 - __main__ - DEBUG - Detected language: ta
+2025-06-01 12:43:04,826 - __main__ - DEBUG - Request received
+2025-06-01 12:43:04,830 - __main__ - DEBUG - Files in request: ['file']
+2025-06-01 12:43:04,831 - __main__ - DEBUG - Form data in request: ['language']
+2025-06-01 12:43:04,831 - __main__ - DEBUG - File name: c4c481d04bbb80300efffa05fc0e3738.jpg
+2025-06-01 12:43:04,831 - __main__ - DEBUG - Selected language code: en
+2025-06-01 12:43:04,832 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-06-01 12:43:04,832 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-06-01 12:43:04,844 - __main__ - DEBUG - Image opened successfully: JPEG, size: (730, 1264)
+2025-06-01 12:43:04,877 - __main__ - DEBUG - Image converted to base64 successfully
+2025-06-01 12:43:07,192 - __main__ - DEBUG - Detected language: ta
+2025-06-01 12:43:07,927 - __main__ - DEBUG - Translated text: If you are going to trust someone, don't trust their words.  Watch their actions and then trust.
+2025-06-02 07:39:12,610 - __main__ - INFO - Google OAuth client configured
+2025-06-02 09:49:57,666 - __main__ - INFO - Google OAuth client configured
+2025-06-02 09:55:55,452 - app - INFO - Google OAuth client configured
+2025-06-02 09:58:49,082 - __main__ - INFO - Google OAuth client configured
+2025-06-02 09:59:37,688 - app - INFO - Google OAuth client configured
+2025-06-02 09:59:50,446 - __main__ - INFO - Google OAuth client configured
+2025-06-02 10:00:08,739 - __main__ - INFO - User aakashjaiswal8284 logging out
+2025-06-02 10:01:20,118 - __main__ - WARNING - Failed login attempt for username/email: aakashjaiswal8284@gmail.com
+2025-06-02 10:01:31,143 - __main__ - WARNING - Failed login attempt for username/email: aakashjaiswal8284@gmail.com
+2025-06-02 10:01:37,302 - __main__ - INFO - Google login initiated
+2025-06-02 10:01:37,302 - __main__ - INFO - Google OAuth redirect URI: http://127.0.0.1:5000/login/google/authorize
+2025-06-02 10:01:43,135 - __main__ - INFO - Processing Google OAuth callback
+2025-06-02 10:01:43,855 - __main__ - DEBUG - Google OAuth token received: ya29.a0AW4...
+2025-06-02 10:01:44,151 - __main__ - INFO - Google user info received: email=aakashjaiswal8284@gmail.com, name=Akshat Jaiswal
+2025-06-02 10:01:44,191 - __main__ - INFO - User aakashjaiswal8284 logged in successfully via Google
+2025-06-02 10:41:35,650 - __main__ - INFO - User aakashjaiswal8284 logging out
+2025-06-02 10:42:24,261 - __main__ - INFO - Google login initiated
+2025-06-02 10:42:24,261 - __main__ - INFO - Google OAuth redirect URI: http://127.0.0.1:5000/login/google/authorize
+2025-06-02 10:42:28,405 - __main__ - INFO - Processing Google OAuth callback
+2025-06-02 10:42:28,962 - __main__ - DEBUG - Google OAuth token received: ya29.a0AW4...
+2025-06-02 10:42:29,494 - __main__ - INFO - Google user info received: email=aakashjaiswal8284@gmail.com, name=Akshat Jaiswal
+2025-06-02 10:42:29,509 - __main__ - INFO - User aakashjaiswal8284 logged in successfully via Google
+2025-06-02 10:43:07,547 - __main__ - DEBUG - Request received
+2025-06-02 10:43:07,547 - __main__ - DEBUG - Files in request: ['file']
+2025-06-02 10:43:07,547 - __main__ - DEBUG - Form data in request: ['language']
+2025-06-02 10:43:07,547 - __main__ - DEBUG - File name: c4c481d04bbb80300efffa05fc0e3738.jpg
+2025-06-02 10:43:07,547 - __main__ - DEBUG - Selected language code: hi
+2025-06-02 10:43:07,547 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-06-02 10:43:07,547 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-06-02 10:43:07,643 - __main__ - DEBUG - Image opened successfully: JPEG, size: (730, 1264)
+2025-06-02 10:43:07,678 - __main__ - DEBUG - Image converted to base64 successfully
+2025-06-02 10:43:12,768 - __main__ - DEBUG - Detected language: ta
+2025-06-02 20:06:21,551 - __main__ - INFO - Google OAuth client configured
+2025-06-03 10:20:06,438 - __main__ - INFO - Google OAuth client configured
+2025-06-03 10:21:33,588 - __main__ - DEBUG - Request received
+2025-06-03 10:21:33,588 - __main__ - DEBUG - Files in request: ['file']
+2025-06-03 10:21:33,588 - __main__ - DEBUG - Form data in request: ['language']
+2025-06-03 10:21:33,588 - __main__ - DEBUG - File name: 66cd5df29849c09682858494_Copy of Top Down (2).png
+2025-06-03 10:21:33,588 - __main__ - DEBUG - Selected language code: pa
+2025-06-03 10:21:33,588 - __main__ - DEBUG - Starting upload_to_gemini function
+2025-06-03 10:21:33,588 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
+2025-06-03 10:21:33,708 - __main__ - DEBUG - Image opened successfully: PNG, size: (1080, 600)
+2025-06-03 10:21:33,708 - __main__ - DEBUG - Converting image to RGB
+2025-06-03 10:21:33,750 - __main__ - DEBUG - Image converted to base64 successfully
+2025-06-03 10:21:37,778 - __main__ - DEBUG - Detected text: FOUNTAIN9
+Top-Down Vs. Bottom-Up Approch for Demand Planning.
 
-<
->
-Narrow Borders
+Top Down
+Inaccurate predictions
+and lack of visibility at
+the most granular
+levels of the supply
+chain.
 
-HDMI
-SD Card Reader
+VS
 
-Spill-Resistant Keyboard
-2025-05-17 22:44:34,832 - __main__ - DEBUG - Detected language: en
-2025-05-19 08:39:49,285 - __main__ - DEBUG - Request received
-2025-05-19 08:39:49,285 - __main__ - DEBUG - Files in request: ['file']
-2025-05-19 08:39:49,285 - __main__ - DEBUG - Form data in request: ['language']
-2025-05-19 08:39:49,288 - __main__ - DEBUG - File name: c4c481d04bbb80300efffa05fc0e3738.jpg
-2025-05-19 08:39:49,288 - __main__ - DEBUG - Selected language code: hi
-2025-05-19 08:39:49,288 - __main__ - DEBUG - Starting upload_to_gemini function
-2025-05-19 08:39:49,288 - __main__ - DEBUG - Image file type: <class 'werkzeug.datastructures.file_storage.FileStorage'>
-2025-05-19 08:39:49,386 - __main__ - DEBUG - Image opened successfully: JPEG, size: (730, 1264)
-2025-05-19 08:39:49,427 - __main__ - DEBUG - Image converted to base64 successfully
-2025-05-19 08:39:53,887 - __main__ - DEBUG - Detected language: ta
+Bottom Up
+Accurate predictions
+rolled up from the most
+granular levels of supply
+chain and visibility
+across SKU/Category
+levels.
+2025-06-03 10:21:38,482 - __main__ - DEBUG - Detected language: en
+2025-06-03 11:51:52,060 - __main__ - INFO - Google OAuth client configured
+2025-06-06 09:02:20,863 - __main__ - INFO - Google OAuth client configured

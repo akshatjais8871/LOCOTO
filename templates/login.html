@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="static/css/templatemo-onix-digital.css">
     <link rel="stylesheet" href="static/css/animated.css">
     <link rel="stylesheet" href="static/css/owl.css">
-    <link rel="stylesheet" href="static/css/responsive.css">
 
     <style>
         /* Login form styles merged with the template style */
@@ -264,11 +263,6 @@
               <li class="scroll-to-section"><a href="aboutus">About Us</a></li>
             </ul>
             <!-- ***** Menu End ***** -->
-            <a class='menu-trigger'>
-              <span></span>
-              <span></span>
-              <span></span>
-            </a>
           </nav>
         </div>
       </div>
@@ -296,9 +290,15 @@
                   <label for="password">Password</label>
                   <input type="password" id="password" name="password" required>
                 </div>
-                <div class="login-actions">
-                  <button type="submit" class="login-btn">Sign in</button>
-                  <a href="{{ url_for('forgot_password') }}" class="forgot-password">Forgot password?</a>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
+                  <a href="{{ url_for('google_login') }}" class="btn btn-danger w-100 mb-3">
+                    <i class="fab fa-google"></i> Login with Google
+                  </a>
+                </div>
+                <div class="text-center mt-3">
+                  <a href="{{ url_for('forgot_password') }}">Forgot Password?</a>
+                  <p class="mt-2">Don't have an account? <a href="{{ url_for('register') }}">Sign Up</a></p>
                 </div>
               </form>
             </div>
@@ -332,6 +332,5 @@
   <script src="static/js/animation.js"></script>
   <script src="static/js/imagesloaded.js"></script>
   <script src="static/js/custom.js"></script>
-  <script src="static/js/responsive-menu.js"></script>
 </body>
 </html>
